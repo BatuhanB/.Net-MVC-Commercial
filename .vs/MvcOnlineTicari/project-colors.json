@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1229e79b-4d03-4296-ba03-36fa3c1c64ad": {
+      "ProjectGuid": "1229e79b-4d03-4296-ba03-36fa3c1c64ad",
+      "DisplayName": "MvcOnlineTicari",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
