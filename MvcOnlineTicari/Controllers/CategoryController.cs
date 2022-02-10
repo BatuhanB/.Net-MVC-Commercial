@@ -36,5 +36,17 @@ namespace MvcOnlineTicari.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult GetCategory(int id)
+        {
+            var category = context.Categories.Find(id);
+            return View("GetCategory",category);  
+        }
+        public ActionResult UpdateCategory(Category category)
+        {
+            var categories = context.Categories.Find(category.CategoryID);
+            categories.CategoryName = category.CategoryName;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

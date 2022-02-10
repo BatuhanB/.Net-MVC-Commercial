@@ -81,3 +81,6 @@ C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\EntityFramework.
 C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\EntityFramework.SqlServer.dll
 C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\EntityFramework.xml
 C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\EntityFramework.SqlServer.xml
+C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\obj\Debug\MvcOnlineTicari.Migrations.initial.resources
+C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\obj\Debug\MvcOnlineTicari.csproj.GenerateResource.cache
+C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\obj\Debug\MvcOnlineTicari.Migrations.Custom.resources

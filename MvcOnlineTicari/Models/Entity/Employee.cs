@@ -21,6 +21,6 @@ namespace MvcOnlineTicari.Models.Entity
         [StringLength(250)]
         public string EmployeeImage { get; set; }//Calisan fotografi
         public ICollection<SaleBehavior> SaleBehaviors { get; set; }//Satis hareketi ile personeller arasinda 1 - n relation
-        public Department Department { get; set; }//Departman ile personeller arasinda 1 - n relation
+        public virtual Department Department { get; set; }//Departman ile personeller arasinda 1 - n relation
     }
 }

@@ -14,9 +14,9 @@ namespace MvcOnlineTicari.Models.Entity
         public DateTime SaleDate { get; set; }//Satis tarihi
         public decimal SalePrice { get; set; }//Satis fiyati
         public decimal SaleSumAmount { get; set; }//Satis toplam tutari
-        public Product Product { get; set; }//Satis hareketi ile urunler arasinda 1 - n relation
-        public Current Current { get; set; }//Satis hareketi ile cari arasinda 1 - n relation
-        public Employee Employee { get; set; }//Satis hareketi ile personel arasinda 1 - n relation
+        public virtual Product Product { get; set; }//Satis hareketi ile urunler arasinda 1 - n relation
+        public virtual Current Current { get; set; }//Satis hareketi ile cari arasinda 1 - n relation
+        public virtual Employee Employee { get; set; }//Satis hareketi ile personel arasinda 1 - n relation
 
     }
 }

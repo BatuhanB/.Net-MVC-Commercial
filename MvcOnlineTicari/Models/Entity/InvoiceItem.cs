@@ -17,6 +17,6 @@ namespace MvcOnlineTicari.Models.Entity
         public int InvoiceItemQuantity { get; set; }//Fatura kalemi miktar
         public decimal InvoiceItemUnitPrice { get; set; }//Fatura kalemi birim fiyat
         public decimal InvoiceItemPrice { get; set; }//Fatura kalemi fiyat
-        public Invoice Invoice { get; set; }//Fatura ve fatura kalemi arasinda 1- n relations
+        public virtual Invoice Invoice { get; set; }//Fatura ve fatura kalemi arasinda 1- n relations
     }
 }

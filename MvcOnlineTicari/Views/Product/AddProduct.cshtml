@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicari.Models.Entity.Product
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <h2>Yeni Urun Sayfasi</h2>
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.ProductName)
+        @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ProductBrand)
+        @Html.TextBoxFor(x => x.ProductBrand, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ProductStock)
+        @Html.TextBoxFor(x => x.ProductStock, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ProductPurchasePrice)
+        @Html.TextBoxFor(x => x.ProductPurchasePrice, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ProductSalePrice)
+        @Html.TextBoxFor(x => x.ProductSalePrice, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Category.CategoryID)
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ProductImage)
+        @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.ProductStatus)
+        @Html.TextBoxFor(x => x.ProductStatus, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Ekle</button>
+
+    </form>
+</div>

@@ -1,0 +1,34 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Urun</th>
+            <th>Marka</th>
+            <th>Stok</th>
+            <th>Alis Fiyat</th>
+            <th>Satis Fiyat</th>
+            <th>Kategori</th>
+            <th>Gorsel</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductBrand</td>
+                <td>@item.ProductStock</td>
+                <td>@item.ProductPurchasePrice</td>
+                <td>@item.ProductSalePrice</td>
+                <td>@item.Category.CategoryName</td>
+                <td>@item.ProductImage</td>
+            </tr>
+        }
+    </table>
+    <a href="/Product/AddProduct/" class="btn btn-dark">Yeni Urun</a>
+</div>

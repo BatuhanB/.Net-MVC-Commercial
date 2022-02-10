@@ -24,7 +24,8 @@ namespace MvcOnlineTicari.Models.Entity
         public decimal ProductPurchasePrice { get; set; }//Urun alis fiyati
         public decimal ProductSalePrice { get; set; }//Urun satis fiyati
         public bool ProductStatus { get; set; }//Urun durumu
-        public Category Category { get; set; }// Kategori ve urun 1 - n relation
+        public int CategoryID { get; set; }
+        public virtual Category Category { get; set; }// Kategori ve urun 1 - n relation
         public ICollection<SaleBehavior> SaleBehaviors { get; set; }//Satis hareketi ile urunler arasinda 1 - n relation
     }
 }
