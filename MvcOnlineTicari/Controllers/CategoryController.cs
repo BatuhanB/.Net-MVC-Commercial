@@ -32,7 +32,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult DeleteCategory(int id)
         {
             var category = context.Categories.Find(id);
-            context.Categories.Remove(category);
+            category.CategoryStatus = false;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

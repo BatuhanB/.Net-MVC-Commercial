@@ -14,6 +14,7 @@ namespace MvcOnlineTicari.Models.Entity
         [Column(TypeName = "varchar")]
         [StringLength(30)]
         public string CategoryName { get; set; }//Kategori adi
+        public bool CategoryStatus { get; set; }
         public ICollection<Product> Products { get; set; }// Kategori ve urun 1 - n relation
     }
 }

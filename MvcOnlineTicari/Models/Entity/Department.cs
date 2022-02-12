@@ -14,6 +14,7 @@ namespace MvcOnlineTicari.Models.Entity
         [Column(TypeName = "varchar")]
         [StringLength(30)]
         public string DepartmentName { get; set; }//Departman adi
+        public bool DepartmentStatus { get; set; }
         public ICollection<Employee> Employees { get; set; }//Departman ile personeller arasinda 1 - n relation
     }
 }

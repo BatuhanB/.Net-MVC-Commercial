@@ -1,0 +1,24 @@
+﻿@model MvcOnlineTicari.Models.Entity.Department
+@{
+    ViewBag.Title = "GetDepartment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <br />
+    <h2>Departman Güncelleme</h2>
+    <br />
+    @using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(x => x.DepartmentName)
+            @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.DepartmentStatus)
+            @Html.TextBoxFor(x => x.DepartmentStatus, new { @class = "form-control" })
+
+            @Html.HiddenFor(x => x.DepartmentID)
+        </div>
+        <button class="btn btn-warning">Güncelle</button>
+    }
+</div>
+
