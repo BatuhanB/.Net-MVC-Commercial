@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicari.Models.Entity.Current
+@{
+    ViewBag.Title = "GetCurrent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    <h2>Cari Güncelleme</h2>
+    <br />
+    @using (Html.BeginForm("UpdateCurrent", "Current", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(x => x.CurrentName)
+            @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color:red" })
+            <br />
+            @Html.LabelFor(x => x.CurrentSurName)
+            @Html.TextBoxFor(x => x.CurrentSurName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CurrentSurName, "", new { @style = "color:red" })
+            <br />
+            @Html.LabelFor(x => x.CurrentCity)
+            @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CurrentCity, "", new { @style = "color:red" })
+            <br />
+            @Html.LabelFor(x => x.CurrentMail)
+            @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.CurrentStatus)
+            @Html.TextBoxFor(x => x.CurrentStatus, new { @class = "form-control" })
+            <br />
+            @Html.HiddenFor(x => x.CurrentID)
+        </div>
+        <button class="btn btn-warning">Güncelle</button>
+    }
+</div>

@@ -33,7 +33,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult AddProduct(Product product)
         {
             context.Products.Add(product);
-            context.SaveChanges(); 
+            context.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult DeleteProduct(int id)
@@ -45,18 +45,21 @@ namespace MvcOnlineTicari.Controllers
         }
         public ActionResult GetProduct(int id)
         {
-            List<SelectListItem> value = (from x in context.Categories.ToList()
-                                          select new SelectListItem
-                                          {
-                                              Text = x.CategoryName,
-                                              Value = x.CategoryID.ToString()
-                                          }).ToList();
-            ViewBag.value1 = value;
-            var product = context.Products.Find(id);
-            return View("GetProduct", product);
+                List<SelectListItem> value = (from x in context.Categories.ToList()
+                                              select new SelectListItem
+                                              {
+                                                  Text = x.CategoryName,
+                                                  Value = x.CategoryID.ToString()
+                                              }).ToList();
+                ViewBag.value1 = value;
+                var product = context.Products.Find(id);
+                return View("GetProduct", product);
+            
         }
         public ActionResult UpdateProduct(Product product)
         {
+            if (!ModelState.IsValid) { return View("GetProduct"); }
+
             var products = context.Products.Find(product.ProductID);
             products.ProductName = product.ProductName;
             products.ProductBrand = product.ProductBrand;

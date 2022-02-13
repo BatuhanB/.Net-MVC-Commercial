@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicari.Models.Entity.Current
+@{
+    ViewBag.Title = "AddCurrent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>Yeni Cari Ekleme Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.CurrentName)
+        @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CurrentSurName)
+        @Html.TextBoxFor(x => x.CurrentSurName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CurrentCity)
+        @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CurrentMail)
+        @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</div>
+

@@ -1,0 +1,37 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<Current>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <br />
+    <h2>Cariler</h2>
+    <table class="table table-condensed">
+        <tr>
+            <th>Cari ID</th>
+            <th>Cari Adı</th>
+            <th>Cari Soyadı</th>
+            <th>Cari Şehir</th>
+            <th>Cari Mail</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CurrentID</td>
+                <td>@item.CurrentName</td>
+                <td>@item.CurrentSurName</td>
+                <td>@item.CurrentCity</td>
+                <td>@item.CurrentMail</td>
+                <td><a href="/Current/DeleteCurrent/@item.CurrentID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Current/GetCurrent/@item.CurrentID" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Current/EmployeeSaleHistory/@item.CurrentID" class="btn btn-dark">Satış Geçmişi</a></td>
+            </tr>
+        }
+
+    </table>
+    <a class="btn btn-success" href="/Current/AddCurrent">Cari Ekle</a>
+</div>

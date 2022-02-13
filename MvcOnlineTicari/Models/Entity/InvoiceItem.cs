@@ -11,11 +11,20 @@ namespace MvcOnlineTicari.Models.Entity
     {
         [Key]
         public int InvoiceItemID { get; set; }
+
+        [Required(ErrorMessage ="Bu alan boş bırakılamaz!")]
         [Column(TypeName = "varchar")]
-        [StringLength(100)]
+        [Display(Name ="Fatura Kalemi Açıklaması")]
+        [StringLength(100,ErrorMessage ="En fazla 100 karakter kullanılabilir!")]
         public string InvoiceItemDesc { get; set; }//Fatura kalemi aciklama
+
+        [Display(Name = "Fatura Kalemi Miktarı")]
         public int InvoiceItemQuantity { get; set; }//Fatura kalemi miktar
+
+        [Display(Name = "Fatura Kalemi Birim Fiyatı")]
         public decimal InvoiceItemUnitPrice { get; set; }//Fatura kalemi birim fiyat
+
+        [Display(Name = "Fatura Kalemi Fiyat")]
         public decimal InvoiceItemPrice { get; set; }//Fatura kalemi fiyat
         public virtual Invoice Invoice { get; set; }//Fatura ve fatura kalemi arasinda 1- n relations
     }

@@ -11,9 +11,13 @@ namespace MvcOnlineTicari.Models.Entity
     {
         [Key]
         public int DepartmentID { get; set; }
+        [Required(ErrorMessage ="Bu alan boş bırakılamaz!")]
         [Column(TypeName = "varchar")]
-        [StringLength(30)]
-        public string DepartmentName { get; set; }//Departman adi
+        [Display(Name ="Departman Adı")]
+        [StringLength(30,ErrorMessage ="En fazla 30 karakter kullanılabilir!")]
+        public string DepartmentName { get; set; }//Departman adi\
+
+        [Display(Name = "Departman Durumu")]
         public bool DepartmentStatus { get; set; }
         public ICollection<Employee> Employees { get; set; }//Departman ile personeller arasinda 1 - n relation
     }

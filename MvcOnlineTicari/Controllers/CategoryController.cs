@@ -43,6 +43,7 @@ namespace MvcOnlineTicari.Controllers
         }
         public ActionResult UpdateCategory(Category category)
         {
+            if (!ModelState.IsValid) { return View("GetCategory"); }
             var categories = context.Categories.Find(category.CategoryID);
             categories.CategoryName = category.CategoryName;
             context.SaveChanges();

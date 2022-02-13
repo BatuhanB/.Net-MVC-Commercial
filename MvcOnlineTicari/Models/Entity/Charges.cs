@@ -11,10 +11,17 @@ namespace MvcOnlineTicari.Models.Entity
     {
         [Key]
         public int ChargeID { get; set; }
+
+        [Required(ErrorMessage ="Bu alan boş geçilemez!")]
         [Column(TypeName = "varchar")]
-        [StringLength(30)]
+        [Display(Name ="Gider Açıklaması")]
+        [StringLength(30,ErrorMessage ="En fazla 30 karakter kullanılabilir!")]
         public string ChargeDesc { get; set; }//Gider aciklama
+
+        [Display(Name = "Gider Tarihi")]
         public DateTime ChargeDate { get; set; }//Gider tarihi
+
+        [Display(Name = "Gider Tutarı")]
         public decimal ChargeAmount { get; set; }//Gider tutari
     }
 }

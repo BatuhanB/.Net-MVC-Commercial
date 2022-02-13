@@ -11,15 +11,25 @@ namespace MvcOnlineTicari.Models.Entity
     {
         [Key]
         public int EmployeeID { get; set; }
+
+        [Required(ErrorMessage ="Bu alan boş geçilemez!")]
         [Column(TypeName = "varchar")]
-        [StringLength(30)]
+        [Display(Name ="Çalışan Adı")]
+        [StringLength(30,ErrorMessage ="En fazla 30 karakter kullanılabilir!")]
         public string EmployeeName { get; set; }//Calisan adi
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         [Column(TypeName = "varchar")]
-        [StringLength(30)]
+        [Display(Name = "Çalışan Soyadı")]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter kullanılabilir!")]
         public string EmployeeSurName { get; set; }//Calisan soyadi
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         [Column(TypeName = "varchar")]
+        [Display(Name = "Çalışan Resmi")]
         [StringLength(250)]
         public string EmployeeImage { get; set; }//Calisan fotografi
+
         public ICollection<SaleBehavior> SaleBehaviors { get; set; }//Satis hareketi ile personeller arasinda 1 - n relation
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }//Departman ile personeller arasinda 1 - n relation

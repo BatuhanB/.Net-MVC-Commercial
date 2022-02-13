@@ -1,0 +1,39 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<SaleBehavior>
+@{
+    ViewBag.Title = "DepartmentEmployeeSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <br />
+    <h2>Departman Personel Satış</h2>
+    <br />
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active" style="font-weight:500">Personel adı: @ViewBag.employeeName</li>
+    </ol>
+    <table class="table table-condensed">
+        <tr>
+            <th>Satış ID</th>
+            <th>Ürün</th>
+            <th>Cari</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Yazdırma</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SaleID</td>
+                <td>@item.Product.ProductName</td>
+                <td>@item.Current.CurrentName @item.Current.CurrentSurName</td>
+                <td>@item.SalePrice</td>
+                <td>@item.SaleQuantity</td>
+                <td>@item.SaleSumAmount</td>
+                <td>@item.SaleDate</td>
+                <td><a href="#" class="btn btn-danger">Yazdır</a></td>
+            </tr>
+        }
+    </table>
+</div>

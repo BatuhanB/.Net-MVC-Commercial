@@ -12,17 +12,29 @@ namespace MvcOnlineTicari.Models.Entity
         [Key]
         public int CurrentID { get; set; }
         [Column(TypeName = "varchar")]
-        [StringLength(30)]
+        [Display(Name = "Cari Adı")]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter kullanabilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string CurrentName { get; set; }//Cari adi
+
         [Column(TypeName = "varchar")]
-        [StringLength(30)]
+        [Display(Name = "Cari Soyadı")]
+        [StringLength(30, ErrorMessage = "En fazla 30 karakter kullanabilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string CurrentSurName { get; set; }//Cari soyadi
+
         [Column(TypeName = "varchar")]
-        [StringLength(13)]
+        [Display(Name = "Cari Şehri")]
+        [StringLength(13, ErrorMessage = "En fazla 13 karakter kullanabilirsiniz!")]
+        [Required(ErrorMessage = "Bu alanı boş geçemezsiniz!")]
         public string CurrentCity { get; set; }//Cari sehiri
+
         [Column(TypeName = "varchar")]
+        [Display(Name = "Cari Mail adresi")]
         [StringLength(50)]
         public string CurrentMail { get; set; }//Cari maili
+        [Display(Name = "Cari durumu")]
+        public bool CurrentStatus { get; set; }
         public ICollection<SaleBehavior> SaleBehaviors { get; set; }//Satis hareketi ile cariler arasinda 1 - n relation
     }
 }

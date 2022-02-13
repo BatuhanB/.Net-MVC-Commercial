@@ -14,7 +14,7 @@ namespace MvcOnlineTicari.Controllers
         Context context = new Context();
         public ActionResult Index()
         {
-            var values = context.Departments.Where(x=>x.DepartmentStatus == true).ToList();
+            var values = context.Departments.Where(x => x.DepartmentStatus == true).ToList();
             return View(values);
         }
         [HttpGet]
@@ -39,10 +39,12 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult GetDepartment(int id)
         {
             var department = context.Departments.Find(id);
-            return View("GetDepartment",department);
+            return View("GetDepartment", department);
         }
         public ActionResult UpdateDepartment(Department department)
         {
+            if (!ModelState.IsValid) { return View("GetDepartment"); }
+
             var departments = context.Departments.Find(department.DepartmentID);
             departments.DepartmentName = department.DepartmentName;
             departments.DepartmentStatus = department.DepartmentStatus;
@@ -54,6 +56,13 @@ namespace MvcOnlineTicari.Controllers
             var values = context.Employees.Where(x => x.DepartmentID == id).ToList();
             var department = context.Departments.Where(x => x.DepartmentID == id).Select(y => y.DepartmentName).FirstOrDefault();
             ViewBag.departmentName = department;
+            return View(values);
+        }
+        public ActionResult DepartmentEmployeeSale(int id)
+        {
+            var employee = context.Employees.Where(x => x.EmployeeID == id).Select(y => y.EmployeeName + " " + y.EmployeeSurName).FirstOrDefault();
+            ViewBag.employeeName = employee;
+            var values = context.SaleBehaviors.Where(x => x.EmployeeID == id).ToList();
             return View(values);
         }
     }
