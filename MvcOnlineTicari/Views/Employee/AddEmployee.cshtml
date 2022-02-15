@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicari.Models.Entity.Employee
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <h2>Yeni Çalışan Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.EmployeeName)
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.EmployeeName, "", new { @style = "color:red" })
+        <br />
+        @Html.LabelFor(x => x.EmployeeSurName)
+        @Html.TextBoxFor(x => x.EmployeeSurName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.EmployeeSurName, "", new { @style = "color:red" })
+        <br />
+        @Html.LabelFor(x => x.EmployeeImage)
+        @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Department)
+        @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</div>

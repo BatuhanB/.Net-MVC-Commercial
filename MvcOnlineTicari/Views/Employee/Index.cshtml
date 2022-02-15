@@ -1,0 +1,33 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    <h2>Burasi Personel Sayfasidir</h2>
+    <table id="employees" class="table table-hover">
+        <tr>
+            <th>Isim</th>
+            <th>Soyisim</th>
+            <th>Resim</th>
+            <th>Departman</th>
+            <th>Guncelle</th>
+            <th>Satışlar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmployeeName</td>
+                <td>@item.EmployeeSurName</td>
+                <td>@item.EmployeeImage</td>
+                <td>@item.Department.DepartmentName</td>
+                <td><a class="btn btn-warning" style="color:black;font-weight:500" href="/Employee/GetEmployee/@item.EmployeeID">Guncelle</a></td>
+                <td><a class="btn btn-success" style="color: black; font-weight: 500" href="/Department/DepartmentEmployeeSale/@item.EmployeeID">Detaylar</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Employee/AddEmployee/" class="btn btn-secondary" style="color:white">Personel Ekle</a>
+</div>
