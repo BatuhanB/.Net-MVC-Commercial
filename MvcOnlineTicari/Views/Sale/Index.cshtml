@@ -1,0 +1,39 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<SaleBehavior>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    <h2>Burasi Satis Sayfasidir</h2>
+    <table id="employees" class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Urun</th>
+            <th>Cari</th>
+            <th>Personel</th>
+            <th>Adet</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Guncelle</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SaleID</td>
+                <td>@item.Product.ProductName</td>
+                <td>@item.Current.CurrentName @item.Current.CurrentSurName</td>
+                <td>@item.Employee.EmployeeName @item.Employee.EmployeeSurName</td>
+                <td>@item.SaleQuantity</td>
+                <td>@item.SaleSumAmount</td>
+                <td>@item.SaleDate</td>
+                <td><a class="btn btn-warning" style="color:black;font-weight:500" href="/Sale/GetSale/@item.SaleID">Guncelle</a></td>
+                <td><a class="btn btn-success" style="color: black; font-weight: 500" href="/Sale/SaleDetail/@item.SaleID">Detaylar</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Sale/NewSale/" class="btn btn-secondary" style="color:white">Yeni Satış Yapma</a>
+</div>

@@ -1,0 +1,31 @@
+﻿@model MvcOnlineTicari.Models.Entity.SaleBehavior
+@{
+    ViewBag.Title = "NewSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>Yeni Satis Sayfasi</h2>
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.Product)
+        @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.prdcts, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Current)
+        @Html.DropDownListFor(x => x.CurrentID, (List<SelectListItem>)ViewBag.crrnts, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Employee)
+        @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.emplys, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.SaleQuantity)
+        @Html.TextBoxFor(x => x.SaleQuantity, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.SalePrice)
+        @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.SaleSumAmount)
+        @Html.TextBoxFor(x => x.SaleSumAmount, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Satış Yap</button>
+
+    </form>
+</div>
