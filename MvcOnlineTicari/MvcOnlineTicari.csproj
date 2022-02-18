@@ -299,6 +299,8 @@
     <Content Include="Views\Employee\GetEmployee.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
     <Content Include="Views\Sale\NewSale.cshtml" />
+    <Content Include="Views\Sale\GetSale.cshtml" />
+    <Content Include="Views\Sale\SaleDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
