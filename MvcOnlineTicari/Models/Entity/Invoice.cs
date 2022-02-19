@@ -23,8 +23,13 @@ namespace MvcOnlineTicari.Models.Entity
         [StringLength(6)]
         public string InvoiceQueueNo { get; set; }// Fatura sira no
 
+        [Display(Name = "Tarih")]
         public DateTime InvoiceDate { get; set; }// Fatura tarih
-        public DateTime InvoiceTime { get; set; }// Fatura saati
+
+        [Column(TypeName = "char")]
+        [Display(Name = "Saat")]
+        [StringLength(5)]
+        public string InvoiceTime { get; set; }// Fatura saati
 
         [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         [Column(TypeName = "varchar")]
@@ -43,6 +48,11 @@ namespace MvcOnlineTicari.Models.Entity
         [Display(Name = "Teslim Alan")]
         [StringLength(30, ErrorMessage = "En fazla 30 karakter kullanılabilir!")]
         public string InvoiceShipTo { get; set; }//Fatura teslim alan
+
+        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
+        [Display(Name = "Toplam Tutar")]
+        public decimal InvoiceSumAmount { get; set; }
+
         public ICollection<InvoiceItem> InvoiceItems { get; set; }//Fatura ve fatura kalemi arasinda 1- n relations
     }
 }

@@ -8,18 +8,20 @@
 <div class="container-fluid">
     <br />
     <h2>Burasi Satis Sayfasidir</h2>
-    <table id="employees" class="table table-hover">
-        <tr>
-            <th>Id</th>
-            <th>Urun</th>
-            <th>Cari</th>
-            <th>Personel</th>
-            <th>Adet</th>
-            <th>Toplam</th>
-            <th>Tarih</th>
-            <th>Guncelle</th>
-            <th>Detaylar</th>
-        </tr>
+    <table id="table1" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Urun</th>
+                <th>Cari</th>
+                <th>Personel</th>
+                <th>Adet</th>
+                <th>Toplam</th>
+                <th>Tarih</th>
+                <th>Guncelle</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
         @foreach (var item in Model)
         {
             <tr>
@@ -37,3 +39,12 @@
     </table>
     <a href="/Sale/NewSale/" class="btn btn-secondary" style="color:white">Yeni Satış Yapma</a>
 </div>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+<script>
+    $('#table1').dataTable({});
+</script>

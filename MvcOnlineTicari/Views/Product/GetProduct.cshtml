@@ -32,6 +32,7 @@
     <br />
     @Html.LabelFor(x => x.Category.CategoryID)
     @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryID, "", new { @class = "text-danger" })
     <br />
     @Html.LabelFor(x => x.ProductStock)
     @Html.TextBoxFor(x => x.ProductStock, new { @class = "form-control" })

@@ -11,6 +11,7 @@
     @using (Html.BeginForm("UpdateSale", "Sale", FormMethod.Post))
     {
 <div class="form-group">
+    
     @Html.LabelFor(x => x.Product)
     @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.prdcts, new { @class = "form-control" })
     <br />

@@ -1,0 +1,40 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <br />
+    <h2>Fatura</h2>
+    <table class="table table-hover">
+        <tr>
+            <td>ID</td>
+            <td>Seri No</td>
+            <td>Sıra No</td>
+            <td>Tarih</td>
+            <td>Saat</td>
+            <td>Toplam Tutar</td>
+            <td>Teslim Eden</td>
+            <td>Teslim Alan</td>
+            <td>Güncelle</td>
+            <td>Teslim Detaylar</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.InvoiceID</td>
+                <td>@item.InvoiceSerialNo</td>
+                <td>@item.InvoiceQueueNo</td>
+                <td>@DateTime.Parse(@item.InvoiceDate.ToString()).ToString( "dd-MM-yyyy")</td>
+                <td>@item.InvoiceTime</td>
+                <td>@item.InvoiceSumAmount</td>
+                <td>@item.InvoiceBillTo</td>
+                <td>@item.InvoiceShipTo</td>
+                <td><a href="/Invoice/InvoiceDetails/" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Invoice/Details/" class="btn btn-danger">Detaylar</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Invoice/AddInvoice/" class="btn btn-primary">Departman Ekle</a>
+</div>
