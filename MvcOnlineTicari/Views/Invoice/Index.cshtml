@@ -14,9 +14,9 @@
             <td>Sıra No</td>
             <td>Tarih</td>
             <td>Saat</td>
-            <td>Toplam Tutar</td>
             <td>Teslim Eden</td>
             <td>Teslim Alan</td>
+            <td>Toplam Tutar</td>
             <td>Güncelle</td>
             <td>Teslim Detaylar</td>
         </tr>
@@ -28,13 +28,13 @@
                 <td>@item.InvoiceQueueNo</td>
                 <td>@DateTime.Parse(@item.InvoiceDate.ToString()).ToString( "dd-MM-yyyy")</td>
                 <td>@item.InvoiceTime</td>
-                <td>@item.InvoiceSumAmount</td>
                 <td>@item.InvoiceBillTo</td>
                 <td>@item.InvoiceShipTo</td>
-                <td><a href="/Invoice/InvoiceDetails/" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="/Invoice/Details/" class="btn btn-danger">Detaylar</a></td>
+                <td>@item.InvoiceSumAmount</td>
+                <td><a href="/Invoice/GetInvoice/@item.InvoiceID" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn btn-danger">Detaylar</a></td>
             </tr>
         }
     </table>
-    <a href="/Invoice/AddInvoice/" class="btn btn-primary">Departman Ekle</a>
+    <a href="/Invoice/AddInvoice/" class="btn btn-primary">Fatura Ekle</a>
 </div>

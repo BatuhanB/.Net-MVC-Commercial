@@ -1,0 +1,42 @@
+﻿@model MvcOnlineTicari.Models.Entity.Invoice
+@{
+    ViewBag.Title = "AddInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <h2>Yeni Urun Sayfasi</h2>
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.InvoiceSerialNo)
+        @Html.TextBoxFor(x => x.InvoiceSerialNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceSerialNo)
+        <br />
+        @Html.LabelFor(x => x.InvoiceQueueNo)
+        @Html.TextBoxFor(x => x.InvoiceQueueNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceQueueNo)
+        <br />
+        @Html.LabelFor(x => x.InvoiceDate)
+        @Html.TextBoxFor(x => x.InvoiceDate, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.InvoiceTime)
+        @Html.TextBoxFor(x => x.InvoiceTime, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.InvoiceTaxAuthority)
+        @Html.TextBoxFor(x => x.InvoiceTaxAuthority, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceTaxAuthority)
+        <br />
+        @Html.LabelFor(x => x.InvoiceSumAmount)
+        @Html.TextBoxFor(x => x.InvoiceSumAmount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceSumAmount)
+        <br />
+        @Html.LabelFor(x => x.InvoiceBillTo)
+        @Html.TextBoxFor(x => x.InvoiceBillTo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceBillTo)
+        <br />
+        @Html.LabelFor(x => x.InvoiceShipTo)
+        @Html.TextBoxFor(x => x.InvoiceShipTo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceShipTo)
+        <br />
+        <button class="btn btn-info">Ekle</button>
+
+    </form>
+</div>

@@ -26,6 +26,7 @@ namespace MvcOnlineTicari.Models.Entity
 
         [Display(Name = "Fatura Kalemi Fiyat")]
         public decimal InvoiceItemPrice { get; set; }//Fatura kalemi fiyat
+        public int InvoiceID { get; set; }
         public virtual Invoice Invoice { get; set; }//Fatura ve fatura kalemi arasinda 1- n relations
     }
 }
