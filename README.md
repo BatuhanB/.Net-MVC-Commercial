@@ -1,5 +1,5 @@
 # .Net-MVC-Commercial
-##Commercial automation using by .Net MVC EntityFramework
+## Commercial automation using by .Net MVC EntityFramework
 > What i use in this project ?
 
 - Layout Control
