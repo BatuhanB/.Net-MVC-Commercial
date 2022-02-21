@@ -62,5 +62,19 @@ namespace MvcOnlineTicari.Controllers
             ViewBag.invcs = invoiceDetails;
             return View(invoiceItem);
         }
+        [HttpGet]
+        public ActionResult AddInvoiceItem()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddInvoiceItem(InvoiceItem invoiceItem)
+        {
+            context.InvoiceItems.Add(invoiceItem);
+            context.SaveChanges();
+            var invoiceID = context.Invoices.Where(x=>x.InvoiceID == invoiceItem.InvoiceItemID).Select(x => x.InvoiceID).FirstOrDefault();
+            ViewBag.invcID = invoiceID;
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace MvcOnlineTicari.Controllers
         Context context = new Context();
         public ActionResult Index()
         {
-            var values =context.Categories.ToList();    
+            var values =context.Categories.Where(x=>x.CategoryStatus == true).ToList();    
             return View(values);
         }
         [HttpGet]
@@ -26,6 +26,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult AddCategory(Category category)
         {
             context.Categories.Add(category);
+            category.CategoryStatus = true;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

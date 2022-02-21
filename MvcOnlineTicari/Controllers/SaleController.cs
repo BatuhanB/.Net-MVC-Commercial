@@ -49,7 +49,7 @@ namespace MvcOnlineTicari.Controllers
         [HttpPost]
         public ActionResult NewSale(SaleBehavior sale)
         {
-            sale.SaleDate = DateTime.Now;
+            sale.SaleDate = DateTime.Today;
             context.SaleBehaviors.Add(sale);
             context.SaveChanges();
             return RedirectToAction("Index");

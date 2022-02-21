@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicari.Models.Entity.InvoiceItem
+@{
+    ViewBag.Title = "AddInvoiceItem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <h2>Yeni Urun Sayfasi</h2>
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.InvoiceItemDesc)
+        @Html.TextBoxFor(x => x.InvoiceItemDesc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceItemDesc)
+        <br />
+        @Html.LabelFor(x => x.InvoiceItemQuantity)
+        @Html.TextBoxFor(x => x.InvoiceItemQuantity, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceItemQuantity)
+        <br />
+        @Html.LabelFor(x => x.InvoiceItemPrice)
+        @Html.TextBoxFor(x => x.InvoiceItemPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceItemQuantity)
+        <br />
+        @Html.LabelFor(x => x.InvoiceID)
+        @Html.TextBoxFor(x=>x.InvoiceID,(String)ViewBag.invcID, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Ekle</button>
+    </form>
+</div>
