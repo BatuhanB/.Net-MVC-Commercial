@@ -154,6 +154,8 @@
     <Compile Include="Models\Entity\Admin.cs" />
     <Compile Include="Models\Entity\Charges.cs" />
     <Compile Include="Models\Entity\Detail.cs" />
+    <Compile Include="Models\Entity\Groups.cs" />
+    <Compile Include="Models\Entity\Groups2.cs" />
     <Compile Include="Models\Entity\Invoice.cs" />
     <Compile Include="Models\Entity\Category.cs" />
     <Compile Include="Models\Entity\Current.cs" />
@@ -2844,6 +2846,9 @@
     <Content Include="thumber\scss\_site-navbar.scss" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
+    <Content Include="Views\Statistic\SimpleTables.cshtml" />
+    <Content Include="Views\Statistic\PartialTable.cshtml" />
+    <Content Include="Views\Statistic\PartialTable2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

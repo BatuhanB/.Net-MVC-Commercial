@@ -49,5 +49,31 @@ namespace MvcOnlineTicari.Controllers
             ViewBag.sumToday = val16;
             return View();
         }
+        public ActionResult SimpleTables()
+        {
+            var query = (from x in context.Currents
+                         group x by x.CurrentCity into g
+                         select new Groups
+                         {
+                             City = g.Key,
+                             Count = g.Count(),
+                         });
+            return View(query.ToList());
+        }
+        public PartialViewResult PartialTable()
+        {
+            var query2 = (from x in context.Employees group x by x.DepartmentID into g
+                          select new Groups2
+                          {
+                              Department = g.Key,
+                              Count = g.Count(),
+                          });
+            return PartialView(query2.ToList());
+        }
+        public PartialViewResult PartialTable2()
+        {
+            var values = context.Currents.ToList();
+            return PartialView(values);
+        }
     }
 }
