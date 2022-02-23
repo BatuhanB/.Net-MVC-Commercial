@@ -20,5 +20,6 @@ namespace MvcOnlineTicari.Models.Context
         public DbSet<InvoiceItem> InvoiceItems { get; set; }
         public DbSet<SaleBehavior> SaleBehaviors { get; set; }
         public DbSet<Detail> Details { get; set; }
+        public DbSet<ToDoList> ToDoLists { get; set; }
     }
 }

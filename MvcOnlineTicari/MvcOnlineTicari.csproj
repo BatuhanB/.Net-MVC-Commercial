@@ -138,6 +138,7 @@
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\SaleController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
+    <Compile Include="Controllers\ToDoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +155,7 @@
     <Compile Include="Models\Entity\Admin.cs" />
     <Compile Include="Models\Entity\Charges.cs" />
     <Compile Include="Models\Entity\Detail.cs" />
+    <Compile Include="Models\Entity\Group3.cs" />
     <Compile Include="Models\Entity\Groups.cs" />
     <Compile Include="Models\Entity\Groups2.cs" />
     <Compile Include="Models\Entity\Invoice.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="Models\Entity\Product.cs" />
     <Compile Include="Models\Entity\ProductDetailDto.cs" />
     <Compile Include="Models\Entity\SaleBehavior.cs" />
+    <Compile Include="Models\Entity\ToDoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2847,8 +2850,12 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Statistic\SimpleTables.cshtml" />
-    <Content Include="Views\Statistic\PartialTable.cshtml" />
-    <Content Include="Views\Statistic\PartialTable2.cshtml" />
+    <Content Include="Views\Statistic\PartialDepartment.cshtml" />
+    <Content Include="Views\Statistic\PartialCurrent.cshtml" />
+    <Content Include="Views\Statistic\PartialProduct.cshtml" />
+    <Content Include="Views\Statistic\PartialProductBrand.cshtml" />
+    <Content Include="Views\Employee\EmployeeCardList.cshtml" />
+    <Content Include="Views\ToDo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

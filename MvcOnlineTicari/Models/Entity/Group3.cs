@@ -5,9 +5,9 @@ using System.Web;
 
 namespace MvcOnlineTicari.Models.Entity
 {
-    public class Groups2
+    public class Group3
     {
-        public string Department { get; set; }
         public int Count { get; set; }
+        public string Brand { get; set; }
     }
 }

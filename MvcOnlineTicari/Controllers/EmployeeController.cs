@@ -59,5 +59,10 @@ namespace MvcOnlineTicari.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult EmployeeCardList()
+        {
+            var values = context.Employees.ToList();
+            return View(values);
+        }
     }
 }

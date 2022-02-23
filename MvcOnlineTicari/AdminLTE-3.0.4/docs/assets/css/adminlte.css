@@ -27063,7 +27063,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .img-circle {
-  border-radius: 50%;
+  border-radius: 5%;
 }
 
 .img-size-64,

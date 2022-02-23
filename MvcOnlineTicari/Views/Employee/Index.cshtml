@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
 <div class="container-fluid">
     <br />
     <h2>Burasi Personel Sayfasidir</h2>
@@ -22,7 +22,7 @@
             <tr>
                 <td>@item.EmployeeName</td>
                 <td>@item.EmployeeSurName</td>
-                <td>@item.EmployeeImage</td>
+                <td><img src="@item.EmployeeImage" style="vertical-align: bottom; width: 102px; height: 68px;" /></td>
                 <td>@item.Department.DepartmentName</td>
                 <td><a class="btn btn-warning" style="color:black;font-weight:500" href="/Employee/GetEmployee/@item.EmployeeID">Guncelle</a></td>
                 <td><a class="btn btn-success" style="color: black; font-weight: 500" href="/Department/DepartmentEmployeeSale/@item.EmployeeID">Detaylar</a></td>

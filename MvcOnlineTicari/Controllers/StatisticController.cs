@@ -60,9 +60,9 @@ namespace MvcOnlineTicari.Controllers
                          });
             return View(query.ToList());
         }
-        public PartialViewResult PartialTable()
+        public PartialViewResult PartialDepartment()
         {
-            var query2 = (from x in context.Employees group x by x.DepartmentID into g
+            var query2 = (from x in context.Employees group x by x.Department.DepartmentName into g
                           select new Groups2
                           {
                               Department = g.Key,
@@ -70,10 +70,26 @@ namespace MvcOnlineTicari.Controllers
                           });
             return PartialView(query2.ToList());
         }
-        public PartialViewResult PartialTable2()
+        public PartialViewResult PartialCurrent()
         {
             var values = context.Currents.ToList();
             return PartialView(values);
+        }
+        public PartialViewResult PartialProduct()
+        {
+            var values = context.Products.ToList();
+            return PartialView(values);
+        }
+        public PartialViewResult PartialProductBrand()
+        {
+            var query3 = (from x in context.Products
+                          group x by x.ProductBrand into g
+                          select new Group3
+                          {
+                              Brand = g.Key,
+                              Count = g.Count(),
+                          });
+            return PartialView(query3.ToList());
         }
     }
 }

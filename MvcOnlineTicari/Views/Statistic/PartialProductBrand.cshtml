@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MvcOnlineTicari.Models.Entity.Group3>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Ürün Marka Tablosu</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th>Progress</th>
+                    <th style="width: 40px">Toplam</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int queueNo = 0;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@{ queueNo++;}@queueNo</td>
+                        <td>@item.Brand</td>
+                        <td>
+                            @switch (item.Count)
+                            {
+                                case 1:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-fuchsia" style="width: 25%"></div>
+                                    </div>
+                                    break;
+                                case 2:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-warning" style="width: 35%"></div>
+                                    </div>
+                                    break;
+                                case 3:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-cyan" style="width: 45%"></div>
+                                    </div>
+                                    break;
+                                case 4:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-green" style="width: 55%"></div>
+                                    </div>
+                                    break;
+                                case 5:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-maroon" style="width: 65%"></div>
+                                    </div>
+                                    break;
+                                case 6:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-orange" style="width: 75%"></div>
+                                    </div>
+                                    break;
+                                case 7:<div class="progress progress-xs">
+                                        <div class="progress-bar bg-lime" style="width: 85%"></div>
+                                    </div>
+                                    break;
+
+                            }
+                        </td>
+                        <td>
+                            @switch (item.Count)
+                            {
+                                case 1:<span class="badge bg-fuchsia">@item.Count</span>
+                                break;
+                            case 2:<span class="badge bg-warning">@item.Count</span>
+                            break;
+                        case 3:<span class="badge bg-cyan">@item.Count</span>
+                        break;
+                    case 4:<span class="badge bg-green">@item.Count</span>
+                    break;
+                case 5:<span class="badge bg-maroon">@item.Count</span>
+                break;
+            case 6:<span class="badge bg-orange">@item.Count</span>
+            break;
+        case 7:<span class="badge bg-lime">@item.Count</span>
+            break;
+    }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
