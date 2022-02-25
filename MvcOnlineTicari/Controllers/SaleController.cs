@@ -49,6 +49,31 @@ namespace MvcOnlineTicari.Controllers
         [HttpPost]
         public ActionResult NewSale(SaleBehavior sale)
         {
+            if (!ModelState.IsValid) { return View("NewSale"); }
+            List<SelectListItem> value1 = (from x in context.Products.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.ProductName,
+                                               Value = x.ProductID.ToString()
+                                           }).ToList();
+
+            List<SelectListItem> value2 = (from x in context.Currents.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CurrentName,
+                                               Value = x.CurrentID.ToString()
+                                           }).ToList();
+
+            List<SelectListItem> value3 = (from x in context.Employees.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.EmployeeName + " " + x.EmployeeSurName,
+                                               Value = x.EmployeeID.ToString()
+                                           }).ToList();
+
+            ViewBag.prdcts = value1;
+            ViewBag.crrnts = value2;
+            ViewBag.emplys = value3;
             sale.SaleDate = DateTime.Today;
             context.SaleBehaviors.Add(sale);
             context.SaveChanges();
@@ -87,6 +112,30 @@ namespace MvcOnlineTicari.Controllers
         {
             if (!ModelState.IsValid) { return View("GetSale"); }
 
+            List<SelectListItem> value1 = (from x in context.Products.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.ProductName,
+                                               Value = x.ProductID.ToString()
+                                           }).ToList();
+
+            List<SelectListItem> value2 = (from x in context.Currents.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CurrentName,
+                                               Value = x.CurrentID.ToString()
+                                           }).ToList();
+
+            List<SelectListItem> value3 = (from x in context.Employees.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.EmployeeName + " " + x.EmployeeSurName,
+                                               Value = x.EmployeeID.ToString()
+                                           }).ToList();
+
+            ViewBag.prdcts = value1;
+            ViewBag.crrnts = value2;
+            ViewBag.emplys = value3;
             var sales = context.SaleBehaviors.Find(sale.SaleID);
             sales.ProductID = sale.ProductID;
             sales.CurrentID = sale.CurrentID;

@@ -32,6 +32,14 @@ namespace MvcOnlineTicari.Controllers
         [HttpPost]
         public ActionResult AddProduct(Product product)
         {
+            if (!ModelState.IsValid) { return View("AddProduct"); }
+            List<SelectListItem> value = (from x in context.Categories.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.CategoryName,
+                                              Value = x.CategoryID.ToString()
+                                          }).ToList();
+            ViewBag.value1 = value;
             context.Products.Add(product);
             context.SaveChanges();
             return RedirectToAction("Index");
@@ -60,6 +68,13 @@ namespace MvcOnlineTicari.Controllers
         {
             if (!ModelState.IsValid) { return View("GetProduct"); }
 
+            List<SelectListItem> value = (from x in context.Categories.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.CategoryName,
+                                              Value = x.CategoryID.ToString()
+                                          }).ToList();
+            ViewBag.value1 = value;
             var products = context.Products.Find(product.ProductID);
             products.ProductName = product.ProductName;
             products.ProductBrand = product.ProductBrand;

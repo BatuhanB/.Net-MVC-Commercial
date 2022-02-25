@@ -32,6 +32,17 @@ namespace MvcOnlineTicari.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
+            List<SelectListItem> value = (from x in context.Departments.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.DepartmentName,
+                                              Value = x.DepartmentID.ToString()
+                                          }).ToList();
+            ViewBag.value1 = value;
+            if (!ModelState.IsValid)
+            {
+                return View("AddEmployee");
+            }
             context.Employees.Add(employee);
             context.SaveChanges();
             return RedirectToAction("Index");
@@ -51,6 +62,17 @@ namespace MvcOnlineTicari.Controllers
         }
         public ActionResult UpdateEmployee(Employee employee)
         {
+            List<SelectListItem> value = (from x in context.Departments.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.DepartmentName,
+                                              Value = x.DepartmentID.ToString()
+                                          }).ToList();
+            ViewBag.value1 = value;
+            if (!ModelState.IsValid)
+            {
+                return View("GetEmployee");
+            }
             var emp = context.Employees.Find(employee.EmployeeID);
             emp.EmployeeName = employee.EmployeeName;
             emp.EmployeeSurName = employee.EmployeeSurName;
