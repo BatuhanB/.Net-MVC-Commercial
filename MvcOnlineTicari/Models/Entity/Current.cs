@@ -33,6 +33,12 @@ namespace MvcOnlineTicari.Models.Entity
         [Display(Name = "Cari Mail adresi")]
         [StringLength(50)]
         public string CurrentMail { get; set; }//Cari maili
+
+        [Column(TypeName = "varchar")]
+        [Display(Name = "Cari Şifresi")]
+        [StringLength(20)]
+        public string CurrentPassword { get; set; }//Cari şifresi
+
         [Display(Name = "Cari durumu")]
         public bool CurrentStatus { get; set; }
         public ICollection<SaleBehavior> SaleBehaviors { get; set; }//Satis hareketi ile cariler arasinda 1 - n relation
