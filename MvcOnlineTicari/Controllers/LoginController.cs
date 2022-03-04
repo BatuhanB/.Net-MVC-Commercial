@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineTicari.Controllers
 {
@@ -29,13 +30,26 @@ namespace MvcOnlineTicari.Controllers
             context.SaveChanges();
             return PartialView();
         }
-        public PartialViewResult LoginCurrent()
+        [HttpGet]
+        public ActionResult LoginCurrent()
         {
-            return PartialView();
+            return View();
         }
-        public PartialViewResult LoginEmployee()
+        [HttpPost]
+        public ActionResult LoginCurrent(Current current)
         {
-            return PartialView();
+            var values = context.Currents.FirstOrDefault(x => x.CurrentMail == current.CurrentMail && x.CurrentPassword == current.CurrentPassword);
+            if (values != null)
+            {
+                FormsAuthentication.SetAuthCookie(values.CurrentMail, false);
+                Session["CurrentMail"] = values.CurrentMail.ToString();
+                return RedirectToAction("Index", "CurrentPanel");
+            }
+            else
+            {
+                return RedirectToAction("Index","Login");
+
+            }
         }
     }
 }

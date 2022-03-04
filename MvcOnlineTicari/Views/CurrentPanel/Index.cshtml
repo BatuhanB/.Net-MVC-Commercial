@@ -1,0 +1,39 @@
+﻿@model MvcOnlineTicari.Models.Entity.Current
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+<div class="container-fluid" align="center">
+    <br />
+    <div class="col-md-6">
+        <div class="border border-light" style="margin-top: 12px; padding: 8px; border-radius: 10px; -webkit-box-shadow: 10px 8px 21px 4px rgba(0,0,0,0.4); box-shadow: 10px 8px 21px 4px rgba(0,0,0,0.4); transition: .3s; ">
+            <h2>Cari Bilgi Paneli</h2>
+            <br />
+            @using (Html.BeginForm("Index2", "CurrentPanel", FormMethod.Post))
+            {
+                <table class="table table-hover">
+                    <tr>
+                        <td>
+                            <span style="font-weight: bold; font-size:18px;">Mail Adresi: </span><label style=" font-size: 18px;"> @HttpContext.Current.User.Identity.Name</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(x => x.CurrentName, new { style = "font-weight:bold;" })@Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(x => x.CurrentSurName, new { style = "font-weight:bold;" })@Html.TextBoxFor(x => x.CurrentSurName, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(x => x.CurrentCity, new { style = "font-weight:bold;" })@Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(x => x.CurrentPassword, new { style = "font-weight:bold;" })@Html.TextBoxFor(x => x.CurrentPassword, new { @class = "form-control" })</td>
+                    </tr>
+                </table>
+                <button class="btn btn-outline-danger" style="margin-bottom:10px;">Bilgilerimi Güncelle</button>
+            }
+        </div>
+    </div>
+</div>
+
+

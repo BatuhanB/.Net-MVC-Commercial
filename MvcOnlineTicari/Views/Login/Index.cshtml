@@ -38,10 +38,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a href="#">Login Form</a>
             </div>
             <div class="social">
-                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                </ul>
             </div>
             <div class="clear"></div>
         </div>
@@ -93,17 +95,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="fa fa-lock"></span>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                       <form action="#" method="post">
+                        @using (Html.BeginForm("LoginCurrent", "Login", FormMethod.Post))
+                        {
                             <input type="email" class="email" name="CurrentMail" Placeholder="Email" required="" />
                             <input type="password" class="password" name="CurrentPassword" Placeholder="Şifre" required="" />
                             <input type="submit" value="Giriş Yap">
-                        </form>
+                        }
                     </div>
                     <div class="login-agileits-bottom">
                         <h6><a href="#">Şifremi Unuttum</a></h6>
                     </div>
                 </div>
             </div>
+
 
         </div>
     </div>
