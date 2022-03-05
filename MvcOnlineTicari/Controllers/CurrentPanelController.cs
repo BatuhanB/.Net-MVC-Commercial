@@ -20,5 +20,12 @@ namespace MvcOnlineTicari.Controllers
             ViewBag.Mail = mail;    
             return View(values);
         }
+        public ActionResult Orders()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var id = context.Currents.Where(x=>x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
+            var values = context.SaleBehaviors.Where(x=>x.CurrentID == id).ToList();
+            return View(values);
+        }
     }
 }

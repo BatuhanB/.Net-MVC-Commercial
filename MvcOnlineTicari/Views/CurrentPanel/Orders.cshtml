@@ -1,0 +1,38 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<SaleBehavior>
+@{
+    ViewBag.Title = "Orders";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+<div class="container-fluid" align="center">
+    <br />
+    <br />
+    <div class="col-md-8">
+        <div class="border border-light" style="margin-top: 12px; padding: 8px; border-radius: 10px; -webkit-box-shadow: 10px 8px 21px 4px rgba(0,0,0,0.4); box-shadow: 10px 8px 21px 4px rgba(0,0,0,0.4); transition: .3s; ">
+            <h2>Sipariş Geçmişim</h2>
+            <hr />
+            <p>
+                <span style="font-weight: bold; font-size:18px;">Mail Adresi: </span><label style=" font-size: 18px;"> @HttpContext.Current.User.Identity.Name</label>
+            </p>
+            <table class="table table-hover">
+                <tr>
+                    <th>Ürün</th>
+                    <th>Miktar</th>
+                    <th>Fiyat</th>
+                    <th>Toplam Tutar</th>
+                    <th>Tarih</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Product.ProductName </td>
+                        <td>@item.SaleQuantity</td>
+                        <td>@item.SalePrice</td>
+                        <td>@item.SaleSumAmount</td>
+                        <td>@DateTime.Parse(@item.SaleDate.ToString()).ToString("dd-MM-yyyy")</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
