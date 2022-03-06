@@ -16,10 +16,14 @@
         <br />
         @Html.LabelFor(x => x.InvoiceItemPrice)
         @Html.TextBoxFor(x => x.InvoiceItemPrice, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.InvoiceItemQuantity)
+        @Html.ValidationMessageFor(x => x.InvoiceItemPrice)
+        <br />
+        @Html.LabelFor(x => x.InvoiceItemUnitPrice)
+        @Html.TextBoxFor(x => x.InvoiceItemUnitPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.InvoiceItemUnitPrice)
         <br />
         @Html.LabelFor(x => x.InvoiceID)
-        @Html.TextBoxFor(x=>x.InvoiceID,(String)ViewBag.invcID, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.InvoiceID, (String)ViewBag.invcID, new { @class = "form-control" })
         <br />
         <button class="btn btn-info">Ekle</button>
     </form>

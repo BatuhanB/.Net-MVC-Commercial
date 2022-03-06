@@ -4,35 +4,36 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <div class="container-fluid">
     <br />
     <h2>Fatura</h2>
     <table class="table table-hover">
-        <tr>
-            <td>ID</td>
-            <td>Seri No</td>
-            <td>Sıra No</td>
-            <td>Tarih</td>
-            <td>Saat</td>
+        <tr style="font-weight:bold;">
+            <td>Seri Sıra No</td>
             <td>Teslim Eden</td>
             <td>Teslim Alan</td>
             <td>Toplam Tutar</td>
+            <td>Tarih</td>
+            <td>Saat</td>
             <td>Güncelle</td>
-            <td>Teslim Detaylar</td>
+            <td>Teslim </td>
+            <td>Popup Liste</td>
+            <td>Yeni Kalem</td>
         </tr>
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.InvoiceID</td>
-                <td>@item.InvoiceSerialNo</td>
-                <td>@item.InvoiceQueueNo</td>
-                <td>@DateTime.Parse(@item.InvoiceDate.ToString()).ToString( "dd-MM-yyyy")</td>
-                <td>@item.InvoiceTime</td>
+                <td>@item.InvoiceSerialNo @item.InvoiceQueueNo</td>
                 <td>@item.InvoiceBillTo</td>
                 <td>@item.InvoiceShipTo</td>
-                <td>@item.InvoiceSumAmount</td>
+                <td>@item.InvoiceSumAmount ₺</td>
+                <td>@DateTime.Parse(@item.InvoiceDate.ToString()).ToString( "dd-MM-yyyy")</td>
+                <td>@item.InvoiceTime</td>
                 <td><a href="/Invoice/GetInvoice/@item.InvoiceID" class="btn btn-warning">Güncelle</a></td>
                 <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn btn-danger">Detaylar</a></td>
+                <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn" style="background-color:chocolate;color:white;">Popup</a></td>
+                <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn" style="background-color: purple; color: white;">Yeni Kalem</a></td>
             </tr>
         }
     </table>

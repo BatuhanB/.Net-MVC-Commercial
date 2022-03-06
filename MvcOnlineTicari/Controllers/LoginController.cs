@@ -47,8 +47,28 @@ namespace MvcOnlineTicari.Controllers
             }
             else
             {
-                return RedirectToAction("Index","Login");
+                return RedirectToAction("Index", "Login");
 
+            }
+        }
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(Admin admin)
+        {
+            var values = context.Admins.FirstOrDefault(x => x.AdminUserName == admin.AdminUserName && x.AdminPassword == admin.AdminPassword);
+            if (values != null)
+            {
+                FormsAuthentication.SetAuthCookie(values.AdminUserName, false);
+                Session["AdminUserName"] = values.AdminUserName.ToString();
+                return RedirectToAction("Index", "Category");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
             }
         }
     }

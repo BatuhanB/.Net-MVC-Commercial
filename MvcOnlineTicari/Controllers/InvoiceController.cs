@@ -31,6 +31,7 @@ namespace MvcOnlineTicari.Controllers
                 return View("AddInvoice");
             }
             context.Invoices.Add(invoice);
+            invoice.InvoiceDate = DateTime.Now;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

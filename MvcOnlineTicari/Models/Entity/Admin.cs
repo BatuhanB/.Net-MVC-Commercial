@@ -24,7 +24,6 @@ namespace MvcOnlineTicari.Models.Entity
         [StringLength(10, ErrorMessage = "En fazla 10 karakter kullanılabilir!")]
         public string AdminPassword { get; set; }
 
-        [Required(ErrorMessage = "Bu alan boş bırakılamaz!")]
         [Column(TypeName = "char")]
         [Display(Name = "Yetki Sınıfı")]
         [StringLength(1)]

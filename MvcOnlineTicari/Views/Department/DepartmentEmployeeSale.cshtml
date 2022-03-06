@@ -13,7 +13,6 @@
     </ol>
     <table class="table table-condensed">
         <tr>
-            <th>Satış ID</th>
             <th>Ürün</th>
             <th>Cari</th>
             <th>Fiyat</th>
@@ -25,13 +24,12 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.SaleID</td>
                 <td>@item.Product.ProductName</td>
                 <td>@item.Current.CurrentName @item.Current.CurrentSurName</td>
-                <td>@item.SalePrice</td>
+                <td>@item.SalePrice ₺</td>
                 <td>@item.SaleQuantity</td>
-                <td>@item.SaleSumAmount</td>
-                <td>@item.SaleDate</td>
+                <td>@item.SaleSumAmount ₺</td>
+                <td>@DateTime.Parse(@item.SaleDate.ToString()).ToString("dd-MM-yyyy")</td>
                 <td><a href="#" class="btn btn-danger">Yazdır</a></td>
             </tr>
         }

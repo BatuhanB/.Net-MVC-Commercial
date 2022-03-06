@@ -49,7 +49,6 @@ namespace MvcOnlineTicari.Models.Entity
         [StringLength(30, ErrorMessage = "En fazla 30 karakter kullanılabilir!")]
         public string InvoiceShipTo { get; set; }//Fatura teslim alan
 
-        [Required(ErrorMessage = "Bu alan boş geçilemez!")]
         [Display(Name = "Toplam Tutar")]
         public decimal InvoiceSumAmount { get; set; }
 

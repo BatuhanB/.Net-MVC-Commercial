@@ -7,7 +7,6 @@
 <div class="container-fluid">
     <table class="table table-bordered" style="margin:20px auto;">
         <tr>
-            <th>ID</th>
             <th>Departman Adı</th>
             <th>Sil</th>
             <th>Güncelle</th>
@@ -16,7 +15,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.DepartmentID</td>
                 <td>@item.DepartmentName</td>
                 <td><a href="/Department/DeleteDepartment/@item.DepartmentID" class="btn btn-outline-danger">Sil</a></td>
                 <td><a href="/Department/GetDepartment/@item.DepartmentID" class="btn btn-outline-success">Güncelle</a></td>

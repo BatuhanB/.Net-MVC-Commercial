@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicari.Models.Context;
 using MvcOnlineTicari.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineTicari.Controllers
 {
@@ -12,10 +14,14 @@ namespace MvcOnlineTicari.Controllers
     {
         // GET: Product
         Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index( string search, int page = 1)
         {
-            var values = context.Products.Where(x => x.ProductStatus == true).ToList();
-            return View(values);
+            var values = from x in context.Products select x;
+            if (!string.IsNullOrEmpty(search))
+            {
+                values = values.Where(y=>y.ProductName.Contains(search));
+            }
+            return View(values.Where(x => x.ProductStatus == true).ToList().ToPagedList(page, 6));
         }
         [HttpGet]
         public ActionResult AddProduct()

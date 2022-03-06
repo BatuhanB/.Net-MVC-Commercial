@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicari.Models.Entity;
 using MvcOnlineTicari.Models.Context;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineTicari.Controllers
 {
@@ -12,9 +14,9 @@ namespace MvcOnlineTicari.Controllers
     {
         // GET: Category
         Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var values =context.Categories.Where(x=>x.CategoryStatus == true).ToList();    
+            var values =context.Categories.Where(x=>x.CategoryStatus == true).ToList().ToPagedList(page,5);    
             return View(values);
         }
         [HttpGet]
