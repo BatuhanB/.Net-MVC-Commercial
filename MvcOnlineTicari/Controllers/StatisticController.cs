@@ -45,7 +45,7 @@ namespace MvcOnlineTicari.Controllers
             DateTime today = DateTime.Today;
             var val15 = context.SaleBehaviors.Count(x => x.SaleDate == today).ToString();
             ViewBag.todaySale = val15;
-            var val16 = (from x in context.SaleBehaviors where x.SaleDate == today select x.SaleSumAmount).Sum().ToString();
+            var val16 = (from x in context.SaleBehaviors where x.SaleDate == today select (decimal?)x.SaleSumAmount).Sum().ToString();
             ViewBag.sumToday = val16;
             return View();
         }

@@ -18,7 +18,6 @@
             <td>Saat</td>
             <td>Güncelle</td>
             <td>Teslim </td>
-            <td>Popup Liste</td>
             <td>Yeni Kalem</td>
         </tr>
         @foreach (var item in Model)
@@ -28,14 +27,44 @@
                 <td>@item.InvoiceBillTo</td>
                 <td>@item.InvoiceShipTo</td>
                 <td>@item.InvoiceSumAmount ₺</td>
-                <td>@DateTime.Parse(@item.InvoiceDate.ToString()).ToString( "dd-MM-yyyy")</td>
+                <td>@DateTime.Parse(@item.InvoiceDate.ToString()).ToString("dd-MM-yyyy")</td>
                 <td>@item.InvoiceTime</td>
                 <td><a href="/Invoice/GetInvoice/@item.InvoiceID" class="btn btn-warning">Güncelle</a></td>
                 <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn btn-danger">Detaylar</a></td>
-                <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn" style="background-color:chocolate;color:white;">Popup</a></td>
                 <td><a href="/Invoice/InvoiceDetails/@item.InvoiceID" class="btn" style="background-color: purple; color: white;">Yeni Kalem</a></td>
             </tr>
         }
     </table>
     <a href="/Invoice/AddInvoice/" class="btn btn-primary">Fatura Ekle</a>
+    <br />
+    <br />
+    <button class="btn" style="background-color:orangered;color:white;" data-toggle="modal" data-target="#Modal1" type="button">Popup Penceresi</button>
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Popup Dialog Ekranı</h2>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Seri No</th>
+                            <th>Sıra No</th>
+                            <th>Tutar</th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.InvoiceSerialNo</td>
+                                <td>@item.InvoiceQueueNo</td>
+                                <td>@item.InvoiceSumAmount</td>
+                            </tr>
+                        }
+
+                    </table>
+                    <buttton typeof="button" data-dismiss="modal" class="btn" style="background-color:#dfed2c;color:black;">Tamam</buttton>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
