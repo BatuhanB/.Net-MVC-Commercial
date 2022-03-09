@@ -6,31 +6,33 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<link href="~/Custom CSS/base.css" rel="stylesheet"/>
-<div class="container-fluid" >
+<link href="~/Custom CSS/base.css" rel="stylesheet" />
+<div class="container-fluid">
     <br />
     <h1 class="display-4 font-weight-bold">Kategori Sayfası</h1>
     <br />
     <div class="col-md-12">
         <div class="border border-light" style="margin-top: 12px; padding: 8px; border-radius: 4px; -webkit-box-shadow: 10px 8px 21px 4px rgba(0,0,0,0.4); box-shadow: 10px 8px 21px 4px rgba(0,0,0,0.4); transition: .3s; ">
-            <br />
-            <table class="table table-hover">
-                <tr>
-                    <th>Kategori Adı</th>
-                    <th>Sil</th>
-                    <th>Güncelle</th>
-                </tr>
-                @foreach (var item in Model)
-                {
+            <div class="content" style="margin:12px;">
+                <br />
+                <table class="table table-hover">
                     <tr>
-                        <td>@item.CategoryName</td>
-                        <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger">Sil</a></td>
-                        <td><a href="/Category/GetCategory/@item.CategoryID" class="btn btn-outline-success">Güncelle</a></td>
+                        <th>Kategori Adı</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
                     </tr>
-                }
-            </table>
-            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
-            <a href="/Category/AddCategory/" class="btn btn-primary" style="margin:0 0 16px;">Yeni Kategori</a>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CategoryName</td>
+                            <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+                            <td><a href="/Category/GetCategory/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
+                        </tr>
+                    }
+                </table>
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+                <a href="/Category/AddCategory/" class="btn btn-primary" style="margin:0 0 16px;">Yeni Kategori</a>
+            </div>
         </div>
     </div>
 </div>
