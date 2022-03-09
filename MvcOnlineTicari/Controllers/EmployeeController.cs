@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +12,7 @@ namespace MvcOnlineTicari.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        Context context  = new Context();
+        Context context = new Context();
         public ActionResult Index()
         {
             var values = context.Employees.ToList();
@@ -32,6 +33,15 @@ namespace MvcOnlineTicari.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
+            if (Request.Files.Count > 0)
+            {
+                string filename = Path.GetFileName(Request.Files[0].FileName);
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string url = "~/Image/" + filename + extension;
+                Request.Files[0].SaveAs(Server.MapPath(url));
+                employee.EmployeeImage = "/Image/" + filename + extension;
+
+            }
             List<SelectListItem> value = (from x in context.Departments.ToList()
                                           select new SelectListItem
                                           {
@@ -58,10 +68,19 @@ namespace MvcOnlineTicari.Controllers
             ViewBag.value1 = value;
 
             var employee = context.Employees.Find(id);
-            return View("GetEmployee",employee);
+            return View("GetEmployee", employee);
         }
         public ActionResult UpdateEmployee(Employee employee)
         {
+            if (Request.Files.Count > 0)
+            {
+                string filename = Path.GetFileName(Request.Files[0].FileName);
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string url = "~/Image/" + filename + extension;
+                Request.Files[0].SaveAs(Server.MapPath(url));
+                employee.EmployeeImage = "/Image/" + filename + extension;
+
+            }
             List<SelectListItem> value = (from x in context.Departments.ToList()
                                           select new SelectListItem
                                           {

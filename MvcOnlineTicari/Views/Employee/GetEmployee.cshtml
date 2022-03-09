@@ -7,8 +7,7 @@
 <div class="container-fluid">
     <br />
     <h2>Departman Güncelleme</h2>
-    <br />
-    @using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+    @using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
 <div class="form-group">
     @Html.LabelFor(x => x.EmployeeName)
@@ -18,7 +17,10 @@
     @Html.TextBoxFor(x => x.EmployeeSurName, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.EmployeeImage)
-    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    <br />
+    @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
+    <input type="file" name="EmployeeImage" />
+    <br />
     <br />
     @Html.LabelFor(x => x.Department.DepartmentID)
     @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
