@@ -98,5 +98,36 @@ namespace MvcOnlineTicari.Controllers
             var values = context.Products.ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult Sale(int id)
+        {
+            List<SelectListItem> value3 = (from x in context.Employees.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.EmployeeName + " " + x.EmployeeSurName,
+                                               Value = x.EmployeeID.ToString()
+                                           }).ToList();
+            ViewBag.emplys = value3;
+            var prod1 = context.Products.Find(id);
+            ViewBag.prodid = prod1.ProductID;
+            ViewBag.prodprice = prod1.ProductSalePrice;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Sale(SaleBehavior saleBehavior)
+        {
+            //if (!ModelState.IsValid) { return View("Sale"); }
+            List<SelectListItem> value3 = (from x in context.Employees.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.EmployeeName + " " + x.EmployeeSurName,
+                                               Value = x.EmployeeID.ToString()
+                                           }).ToList();
+            ViewBag.emplys = value3;
+            saleBehavior.SaleDate = DateTime.Today;
+            context.SaleBehaviors.Add(saleBehavior);
+            context.SaveChanges();
+            return RedirectToAction("Index","Sale");
+        }
     }
 }

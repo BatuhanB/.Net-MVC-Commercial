@@ -2925,6 +2925,7 @@
     <Content Include="Views\CurrentPanel\Index.cshtml" />
     <Content Include="Views\CurrentPanel\Orders.cshtml" />
     <Content Include="Views\Alert\Index.cshtml" />
+    <Content Include="Views\Product\Sale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,44 @@
+﻿@model MvcOnlineTicari.Models.Entity.SaleBehavior
+@{
+    ViewBag.Title = "Sale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container-fluid">
+    <h1>Yeni Ürün Satış Sayfası</h1>
+
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.Product)
+        <input type="text" name="ProductID" value="@ViewBag.prodid" class="form-control" readonly />
+        @*@Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.prdcts, new { @class = "form-control" })*@
+        <br />
+        @Html.LabelFor(x => x.Current)
+        @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
+        @*@Html.DropDownListFor(x => x.CurrentID, (List<SelectListItem>)ViewBag.crrnts, new { @class = "form-control" })*@
+        <br />
+        @Html.LabelFor(x => x.Employee)
+        @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.emplys, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.SaleQuantity)
+        <input type="number" name="SaleQuantity" class="form-control" id="txt1" onchange="sum();" min="0" placeholder="Adet giriniz" />
+        <br />
+        @Html.LabelFor(x => x.SalePrice)
+        <input type="text" name="SalePrice" value="@ViewBag.prodprice" id="txt2" onkeyup="sum();" class="form-control" />
+        <br />
+        @Html.LabelFor(x => x.SaleSumAmount)
+        <input type="text" id="txt3" name="SaleSumAmount" class="form-control" readonly/>
+        <br />
+        <button class="btn btn-info">Satış Yap</button>
+
+    </form>
+    <script>
+        function sum() {
+            var val1 = document.getElementById('txt1').value;
+            var val2 = document.getElementById('txt2').value;
+            var result = parseInt(val1) * parseInt(val2);
+            if (!isNaN(result)) {
+                document.getElementById('txt3').value = result;
+            }
+        }
+    </script>
+</div>
+
