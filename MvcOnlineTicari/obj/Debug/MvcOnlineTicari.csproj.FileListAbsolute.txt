@@ -88,3 +88,4 @@ C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\PagedList.dll
 C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\PagedList.Mvc.dll
 C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\PagedList.xml
 C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\bin\PagedList.Mvc.xml
+C:\Users\balib\source\repos\MvcOnlineTicari\MvcOnlineTicari\obj\Debug\MvcOnlineTicari.Migrations.CargoTest.resources

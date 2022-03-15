@@ -1,0 +1,29 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<CargoTrack>
+@{
+    ViewBag.Title = "TrackCargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    <h2>Kargo Takip Sayfası</h2>
+    <br />
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active" style="font-weight:500">Kargo Takip Kodu: @ViewBag.cargoTrackCode</li>
+    </ol>
+    <table class="table table-striped">
+        <tr>
+            <th>Açıklama</th>
+            <th>Tarih</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CargoTrackDesc</td>
+                <td>@DateTime.Parse(@item.CargoTrackDate.ToString()).ToString("dd-MMM-yyyy")</td>
+            </tr>
+        }
+    </table>
+</div>
+

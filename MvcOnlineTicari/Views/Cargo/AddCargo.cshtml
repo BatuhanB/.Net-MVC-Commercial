@@ -1,0 +1,30 @@
+﻿@model MvcOnlineTicari.Models.Entity.CargoDetail
+@{
+    ViewBag.Title = "AddCargo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>Yeni Kargo Bilgisi Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.CargoDetailTrackCode)
+        <input class="form-control" type="text" value="@ViewBag.trackCode" readonly name="CargoDetailTrackCode"/>
+        @*@Html.TextBoxFor(x => x.CargoDetailTrackCode, new { @class = "form-control" })*@
+        <br />
+        @Html.LabelFor(x => x.CargoDetailEmployee)
+        @Html.TextBoxFor(x => x.CargoDetailEmployee, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CargoDetailReceiver)
+        @Html.TextBoxFor(x => x.CargoDetailReceiver, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.CargoDetailDate)
+        <input type="date" name="CargoDetailDate" class="form-control" style="width:210px;" />
+        <br />
+        @Html.LabelFor(x => x.CargoDetailDesc)
+        @Html.TextAreaFor(x => x.CargoDetailDesc, new { @class = "form-control", style = "width:550px;height:120px;" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</div>
+
