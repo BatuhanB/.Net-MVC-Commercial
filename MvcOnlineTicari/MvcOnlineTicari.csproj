@@ -53,6 +53,9 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
@@ -115,9 +118,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -144,6 +144,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\GraphController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Models\Entity\CargoDetail.cs" />
     <Compile Include="Models\Entity\CargoTrack.cs" />
     <Compile Include="Models\Entity\Charges.cs" />
+    <Compile Include="Models\Entity\Class1.cs" />
     <Compile Include="Models\Entity\Detail.cs" />
     <Compile Include="Models\Entity\Group3.cs" />
     <Compile Include="Models\Entity\Groups.cs" />
@@ -2941,6 +2943,10 @@
     <Content Include="Views\Cargo\AddCargo.cshtml" />
     <Content Include="Views\Cargo\TrackCargo.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Graph\Index.cshtml" />
+    <Content Include="Views\Graph\Index2.cshtml" />
+    <Content Include="Views\Graph\Index3.cshtml" />
+    <Content Include="Views\Graph\Index4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
