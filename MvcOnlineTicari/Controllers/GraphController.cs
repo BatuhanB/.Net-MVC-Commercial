@@ -21,7 +21,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult Index2()
         {
             var drawGraph = new Chart(750, 750);
-            drawGraph.AddTitle("Kategori - Ürün Stok Sayısı").AddLegend("Stok").AddSeries("Değerler", xValue: new[] { "Ev Esyalari", "Ofis Esyalari", "Teknoloji Urunleri", "Kisisel Bakim" },yValues:new [] {12,25,124,242}).Write();
+            drawGraph.AddTitle("Kategori - Ürün Stok Sayısı").AddLegend("Stok").AddSeries("Değerler", xValue: new[] { "Ev Esyalari", "Ofis Esyalari", "Teknoloji Urunleri", "Kisisel Bakim" }, yValues: new[] { 12, 25, 124, 242 }).Write();
             return File(drawGraph.ToWebImage().GetBytes(), "image/jpeg");
         }
         public ActionResult Index3()
@@ -68,6 +68,36 @@ namespace MvcOnlineTicari.Controllers
                 ProductStock = 320
             });
             return class1s;
+        }
+
+        public ActionResult Index5()//Pie Chart
+        {
+            return View();
+        }
+        public ActionResult Index6()//Line Chart
+        {
+            return View();
+        }
+        public ActionResult Index7()//Column Chart
+        {
+            return View();
+        }
+        public ActionResult VisualizeProductResults2()
+        {
+            return Json(ProductList2(), JsonRequestBehavior.AllowGet);
+        }
+        public List<Class2> ProductList2()
+        {
+            List<Class2> class2s = new List<Class2>();
+            using (var context = new Context())
+            {
+                class2s = context.Products.Select(x => new Class2
+                {
+                    PrdctName = x.ProductName,
+                    PrdctStock = x.ProductStock,
+                }).ToList();
+                return class2s;
+            }
         }
     }
 }

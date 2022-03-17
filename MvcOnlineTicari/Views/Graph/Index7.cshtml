@@ -1,9 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Index4";
+    ViewBag.Title = "Index7";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <!DOCTYPE html>
+<br />
+<h2 style="text-align:center;" class="display-4 font-weight-bold">Ürün - Stok Grafiği</h2>
 <html lang="en">
 <head>
     <title>Result Visualization</title>
@@ -16,7 +19,7 @@
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
-                url: '@Url.Action("VisualizeProductResults", "Graph")',
+                url: '@Url.Action("VisualizeProductResults2", "Graph")',
                 success: function (result) {
                     google.charts.load('current', {
                         'packages': ['corechart']
@@ -33,25 +36,27 @@
             data.addColumn('number', 'Stoklar');
             var dataArray = [];
             $.each(result, function (i, obj) {
-                dataArray.push([obj.ProductName, obj.ProductStock]);
+                dataArray.push([obj.PrdctName, obj.PrdctStock]);
             });
             data.addRows(dataArray);
             var columnChartOptions = {
-                title: "Ürün - Stok Grafiği",
+                /*title: "Ürün - Stok Grafiği",*/
                 width: 1600,
                 height: 800,
                 bar: { groupWidth: "20%" },
             };
-            var columnChart = new google.visualization.PieChart(document
-                .getElementById('Piechart_div'));
+            var columnChart = new google.visualization.ColumnChart(document
+                .getElementById('Columnchart_div'));
             columnChart.draw(data, columnChartOptions);
         }
     </script>
 </head>
 <body>
-    <div id="Piechart_div"></div>
+    <div id="Columnchart_div"></div>
     @*<a href="@Url.Action("PieChart")" class="btn btn-danger">Pie Chart</a>
-    <a href="@Url.Action("ColumnChart")" class="active btn btn-primary">Column Chart</a>
-    <a href="@Url.Action("LineChart")" class="btn btn-warning">Line Chart</a>*@
+        <a href="@Url.Action("ColumnChart")" class="active btn btn-primary">Column Chart</a>
+        <a href="@Url.Action("LineChart")" class="btn btn-warning">Line Chart</a>*@
 </body>
 </html>
+
+
