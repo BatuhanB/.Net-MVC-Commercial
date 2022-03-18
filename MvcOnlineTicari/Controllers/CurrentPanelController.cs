@@ -27,5 +27,20 @@ namespace MvcOnlineTicari.Controllers
             var values = context.SaleBehaviors.Where(x=>x.CurrentID == id).ToList();
             return View(values);
         }
+        public ActionResult InComingMessage()
+        {
+            var values = context.Messages.ToList();
+            return View(values);
+        }
+        [HttpGet]
+        public ActionResult NewMessage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewMessage(Message message)
+        {
+            return View();
+        }
     }
 }

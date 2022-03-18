@@ -148,6 +148,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\QRController.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Models\Entity\Department.cs" />
     <Compile Include="Models\Entity\Employee.cs" />
     <Compile Include="Models\Entity\InvoiceItem.cs" />
+    <Compile Include="Models\Entity\Message.cs" />
     <Compile Include="Models\Entity\Product.cs" />
     <Compile Include="Models\Entity\ProductDetailDto.cs" />
     <Compile Include="Models\Entity\SaleBehavior.cs" />
@@ -2951,9 +2953,11 @@
     <Content Include="Views\Graph\Index5.cshtml" />
     <Content Include="Views\Graph\Index6.cshtml" />
     <Content Include="Views\Graph\Index7.cshtml" />
+    <Content Include="Views\CurrentPanel\InComingMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
