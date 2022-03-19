@@ -29,18 +29,33 @@ namespace MvcOnlineTicari.Controllers
         }
         public ActionResult InComingMessage()
         {
-            var values = context.Messages.ToList();
+            var mail = (string)Session["CurrentMail"];
+            var values = context.Messages.Where(x=>x.Receiver == mail).ToList();
+            var incomingValues = context.Messages.Where(x=>x.Receiver == mail).Count().ToString();
+            var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
+            ViewBag.numberMail2 = sendedValues;
+            ViewBag.numberMail = incomingValues;
             return View(values);
         }
-        [HttpGet]
-        public ActionResult NewMessage()
+        public ActionResult SentMessage()
         {
-            return View();
+            var mail = (string)Session["CurrentMail"];
+            var values = context.Messages.Where(x => x.Sender == mail).ToList();
+            var incomingValues = context.Messages.Where(x => x.Receiver == mail).Count().ToString();
+            ViewBag.numberMail = incomingValues;
+            var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
+            ViewBag.numberMail2 = sendedValues;
+            return View(values);
         }
-        [HttpPost]
-        public ActionResult NewMessage(Message message)
-        {
-            return View();
-        }
+        //    [HttpGet]
+        //    public ActionResult NewMessage()
+        //    {
+        //        return View();
+        //    }
+        //    [HttpPost]
+        //    public ActionResult NewMessage(Message message)
+        //    {
+        //        return View();
+        //    }
     }
 }

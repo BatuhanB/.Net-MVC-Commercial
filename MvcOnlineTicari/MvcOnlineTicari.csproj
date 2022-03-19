@@ -2954,6 +2954,7 @@
     <Content Include="Views\Graph\Index6.cshtml" />
     <Content Include="Views\Graph\Index7.cshtml" />
     <Content Include="Views\CurrentPanel\InComingMessage.cshtml" />
+    <Content Include="Views\CurrentPanel\SentMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
