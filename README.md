@@ -1,6 +1,6 @@
 # .Net-MVC-Commercial
 ## Commercial automation using by .Net MVC EntityFramework
-> What i use in this project ?
+> What was used in this project ?
 
 - Layout Control
 - Controller Structure
