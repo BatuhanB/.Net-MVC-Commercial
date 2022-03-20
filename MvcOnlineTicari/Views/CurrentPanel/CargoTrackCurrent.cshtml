@@ -1,0 +1,33 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<CargoTrack>
+
+@{
+    ViewBag.Title = "CargoTrackCurrent";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    <h2>Kargo Takip Sayfası</h2>
+    <br />
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active" style="font-weight:500">Kargo Takip Kodu: @ViewBag.cargoTrackCode</li>
+    </ol>
+    <table class="table table-striped">
+        <tr>
+            <td>#</td>
+            <th>Açıklama</th>
+            <th>Tarih</th>
+        </tr>
+        @{ int queueNo = 0;}
+        @{int lastIndex = @ViewBag.cntr;}
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@{ queueNo++; if(queueNo == @ViewBag.cntr){break;}}@queueNo</td>
+            <td>@item.CargoTrackDesc</td>
+            <td>@DateTime.Parse(@item.CargoTrackDate.ToString()).ToString("dd-MMM-yyyy")</td>
+        </tr>
+        }
+    </table>
+</div>

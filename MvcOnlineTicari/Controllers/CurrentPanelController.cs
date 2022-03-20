@@ -5,33 +5,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineTicari.Controllers
 {
     public class CurrentPanelController : Controller
     {
         // GET: CurrentPanel
-        Context context = new Context();    
+        Context context = new Context();
         [Authorize]
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
             var values = context.Currents.FirstOrDefault(x => x.CurrentMail == mail);
-            ViewBag.Mail = mail;    
+            ViewBag.Mail = mail;
             return View(values);
         }
+        [Authorize]
         public ActionResult Orders()
         {
             var mail = (string)Session["CurrentMail"];
-            var id = context.Currents.Where(x=>x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
-            var values = context.SaleBehaviors.Where(x=>x.CurrentID == id).ToList();
+            var id = context.Currents.Where(x => x.CurrentMail == mail).Select(y => y.CurrentID).FirstOrDefault();
+            var values = context.SaleBehaviors.Where(x => x.CurrentID == id).ToList();
             return View(values);
         }
+        [Authorize]
         public ActionResult InComingMessage()
         {
             var mail = (string)Session["CurrentMail"];
-            var values = context.Messages.Where(x=>x.Receiver == mail).OrderByDescending(x=>x.MessageDate).ToList();
-            var incomingValues = context.Messages.Where(x=>x.Receiver == mail).Count().ToString();
+            var values = context.Messages.Where(x => x.Receiver == mail).OrderByDescending(x => x.MessageDate).ToList();
+            var incomingValues = context.Messages.Where(x => x.Receiver == mail).Count().ToString();
             var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
             ViewBag.numberMail2 = sendedValues;
             ViewBag.numberMail = incomingValues;
@@ -76,6 +79,28 @@ namespace MvcOnlineTicari.Controllers
             context.Messages.Add(message);
             context.SaveChanges();
             return RedirectToAction("NewMessage");
+        }
+        [Authorize]
+        public ActionResult CargoTrack(string search)
+        {
+            var values = from x in context.CargoDetails select x;
+            values = values.Where(y => y.CargoDetailTrackCode == search);
+            return View(values.ToList());
+        }
+        public ActionResult CargoTrackCurrent(string id)
+        {
+            var values = context.CargoTracks.Where(x => x.CargoTrackCode == id).ToList();
+            var trackCode = context.CargoDetails.Where(x => x.CargoDetailTrackCode == id).Select(x => x.CargoDetailTrackCode).FirstOrDefault(); ;
+            ViewBag.cargoTrackCode = trackCode;
+            var counter = context.CargoTracks.Where(x => x.CargoTrackCode == id).Count();
+            ViewBag.cntr = counter;
+            return View(values);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

@@ -1,0 +1,36 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<CargoDetail>
+@{
+    ViewBag.Title = "CargoTrack";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <br />
+    @using (Html.BeginForm("CargoTrack", "CurrentPanel", FormMethod.Get))
+    {
+        <p>
+            <span style="font-weight:bold;font-size:20px;">Takip Numarası:</span> @Html.TextBox("search", null, new { @class = "form-control", style = "width:220px;display:inline-block;" })
+            <input type="submit" value="Ara" class="btn btn-dark" style="margin-bottom:5px;" />
+        </p>
+    }
+    <table class="table table-bordered" style="margin:20px auto;">
+        <tr>
+            <th>Kargo Takip No</th>
+            <th>Personel</th>
+            <th>Alıcı</th>
+            <th>Tarih</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CargoDetailTrackCode</td>
+                <td>@item.CargoDetailDesc</td>
+                <td>@item.CargoDetailReceiver</td>
+                <td>@DateTime.Parse(@item.CargoDetailDate.ToString()).ToString("dd-MM-yyyy")</td>
+                <td><a href="/CurrentPanel/CargoTrackCurrent/@item.CargoDetailTrackCode" class="btn btn-outline-danger">Detay</a></td>
+            </tr>
+        }
+    </table>
+</div> 
