@@ -44,7 +44,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-3">
-                <a href="compose.html" class="btn btn-primary btn-block mb-3">Yeni Mesaj</a>
+                <a href="/CurrentPanel/NewMessage/" class="btn btn-primary btn-block mb-3">Yeni Mesaj</a>
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Klasörler</h3>
@@ -179,7 +179,7 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="read-mail.html">@item.Receiver</a></td>
+                                            <td class="mailbox-name"><a href="/CurrentPanel/MessageDetail/@item.MessageId">@item.Sender</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.Subject</b> - @item.Content.Substring(0, 40).ToString()...
                                             </td>

@@ -30,7 +30,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult InComingMessage()
         {
             var mail = (string)Session["CurrentMail"];
-            var values = context.Messages.Where(x=>x.Receiver == mail).ToList();
+            var values = context.Messages.Where(x=>x.Receiver == mail).OrderByDescending(x=>x.MessageDate).ToList();
             var incomingValues = context.Messages.Where(x=>x.Receiver == mail).Count().ToString();
             var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
             ViewBag.numberMail2 = sendedValues;
@@ -41,21 +41,41 @@ namespace MvcOnlineTicari.Controllers
         {
             var mail = (string)Session["CurrentMail"];
             var values = context.Messages.Where(x => x.Sender == mail).ToList();
+            var incomingValues = context.Messages.Where(x => x.Receiver == mail).OrderBy(x => x.MessageDate).Count().ToString();
+            ViewBag.numberMail = incomingValues;
+            var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
+            ViewBag.numberMail2 = sendedValues;
+            return View(values);
+        }
+        public ActionResult MessageDetail(int id)
+        {
+            var values = context.Messages.Where(x => x.MessageId == id).ToList();
+            var mail = (string)Session["CurrentMail"];
             var incomingValues = context.Messages.Where(x => x.Receiver == mail).Count().ToString();
             ViewBag.numberMail = incomingValues;
             var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
             ViewBag.numberMail2 = sendedValues;
             return View(values);
         }
-        //    [HttpGet]
-        //    public ActionResult NewMessage()
-        //    {
-        //        return View();
-        //    }
-        //    [HttpPost]
-        //    public ActionResult NewMessage(Message message)
-        //    {
-        //        return View();
-        //    }
+        [HttpGet]
+        public ActionResult NewMessage()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var incomingValues = context.Messages.Where(x => x.Receiver == mail).Count().ToString();
+            ViewBag.numberMail = incomingValues;
+            var sendedValues = context.Messages.Where(x => x.Sender == mail).Count().ToString();
+            ViewBag.numberMail2 = sendedValues;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewMessage(Message message)
+        {
+            var mail = (string)Session["CurrentMail"];
+            message.MessageDate = DateTime.Now;
+            message.Sender = mail;
+            context.Messages.Add(message);
+            context.SaveChanges();
+            return RedirectToAction("NewMessage");
+        }
     }
 }

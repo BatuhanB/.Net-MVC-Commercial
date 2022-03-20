@@ -33,7 +33,7 @@ namespace MvcOnlineTicari.Models.Entity
         [Required(ErrorMessage = "Bu alan boş bırakılamaz!")]
         [Column(TypeName = "varchar")]
         [Display(Name = "İçerik")]
-        [StringLength(2000, ErrorMessage = "En fazla 30 karakter kullanılabilir!")]
+        [StringLength(5000, ErrorMessage = "En fazla 5000 karakter kullanılabilir!")]
         public string Content { get; set; }//Mesaj İçeriği
 
         [Column(TypeName = "Date")]
