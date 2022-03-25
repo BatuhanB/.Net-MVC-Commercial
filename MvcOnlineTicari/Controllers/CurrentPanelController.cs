@@ -17,8 +17,16 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
-            var values = context.Currents.FirstOrDefault(x => x.CurrentMail == mail);
+            var values = context.Currents.Where(x => x.CurrentMail == mail).ToList();
             ViewBag.Mail = mail;
+            var mailid = context.Currents.Where(x => x.CurrentMail == mail).Select(x => x.CurrentID).FirstOrDefault();
+            ViewBag.mailID = mailid;
+            var saleSumValue = context.SaleBehaviors.Where(x => x.CurrentID == mailid).Count();
+            ViewBag.SaleSum = saleSumValue;
+            var saleSumAmount = context.SaleBehaviors.Where(x => x.CurrentID == mailid).Sum(x => (decimal?)x.SaleSumAmount);
+            ViewBag.SalesSumAmount = saleSumAmount;
+            var saleProductCount = context.SaleBehaviors.Where(x => x.CurrentID == mailid).Sum(x => (int?)x.SaleQuantity);
+            ViewBag.ProductCount = saleProductCount;
             return View(values);
         }
         [Authorize]
