@@ -1,0 +1,27 @@
+﻿@using MvcOnlineTicari.Models.Entity
+@model List<Message>
+
+@foreach (var item in Model)
+{
+    <div class="timeline timeline-inverse">
+        <!-- timeline time label -->
+        <div class="time-label">
+            <span class="bg-warning">
+                @DateTime.Parse(@item.MessageDate.ToString()).ToString("dd.MMM.yyyy")
+            </span>
+        </div>
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+        <div>
+            <i class="fas fa-envelope bg-primary"></i>
+            <div class="timeline-item">
+                <h3 class="timeline-header"><a href="#">@item.Sender</a> tarafından gönderildi.</h3>
+                <h2 class="timeline-header" style="font-size:18px; text-transform:uppercase;color:darkred;font-weight:bold;">@item.Subject</h2>
+                <div class="timeline-body">
+                    @item.Content
+                </div>
+            </div>
+        </div>
+        <!-- END timeline item -->
+    </div>
+}

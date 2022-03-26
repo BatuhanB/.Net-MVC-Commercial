@@ -2960,6 +2960,8 @@
     <Content Include="Views\CurrentPanel\NewMessage.cshtml" />
     <Content Include="Views\CurrentPanel\CargoTrack.cshtml" />
     <Content Include="Views\CurrentPanel\CargoTrackCurrent.cshtml" />
+    <Content Include="Views\CurrentPanel\CurrentSettings.cshtml" />
+    <Content Include="Views\CurrentPanel\Announcements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

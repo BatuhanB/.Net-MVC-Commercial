@@ -17,7 +17,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
-            var values = context.Currents.Where(x => x.CurrentMail == mail).ToList();
+            var values = context.Messages.Where(x => x.Receiver == mail).ToList();
             ViewBag.Mail = mail;
             var mailid = context.Currents.Where(x => x.CurrentMail == mail).Select(x => x.CurrentID).FirstOrDefault();
             ViewBag.mailID = mailid;
@@ -27,6 +27,10 @@ namespace MvcOnlineTicari.Controllers
             ViewBag.SalesSumAmount = saleSumAmount;
             var saleProductCount = context.SaleBehaviors.Where(x => x.CurrentID == mailid).Sum(x => (int?)x.SaleQuantity);
             ViewBag.ProductCount = saleProductCount;
+            var nameSurName = context.Currents.Where(x => x.CurrentID == mailid).Select(y => y.CurrentName + " " + y.CurrentSurName).FirstOrDefault();
+            ViewBag.NameSurName = nameSurName;
+            var city = context.Currents.Where(x => x.CurrentID == mailid).Select(x => x.CurrentCity).FirstOrDefault();
+            ViewBag.currentCity = city;
             return View(values);
         }
         [Authorize]
@@ -109,6 +113,29 @@ namespace MvcOnlineTicari.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon();
             return RedirectToAction("Index", "Login");
+        }
+        public PartialViewResult CurrentSettings()
+        {
+            var mail = (string)Session["CurrentMail"];
+            var id = context.Currents.Where(x => x.CurrentMail == mail).Select(x => x.CurrentID).FirstOrDefault();
+            var current = context.Currents.Find(id);
+            return PartialView("CurrentSettings", current);
+        }
+        public PartialViewResult Announcements()
+        {
+            var values = context.Messages.Where(x => x.Sender == "admin").ToList();
+            return PartialView(values);
+        }
+        public ActionResult CurrentInfoUpdate(Current current)
+        {
+            if (!ModelState.IsValid) { return View("CurrentSettings"); }
+            var values = context.Currents.Find(current.CurrentID);
+            values.CurrentName = current.CurrentName;
+            values.CurrentSurName = current.CurrentSurName;
+            values.CurrentPassword = current.CurrentPassword;
+            values.CurrentCity = current.CurrentCity;
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

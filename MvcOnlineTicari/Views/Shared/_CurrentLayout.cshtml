@@ -1,40 +1,83 @@
 ﻿
-@{ 
+@{
     Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Cari İşlem Sayfası</title>
-
     <!-- Bootstrap core CSS -->
     <link href="~/webpanel/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom styles for this template -->
     <link href="~/webpanel/css/simple-sidebar.css" rel="stylesheet">
+    <style>
 
+        #customHr {
+            background-color: #ff3c78;
+            height: 2.2px;
+            border-radius: 35px;
+            color: white;
+        }
+
+        #hoveredList {
+            text-decoration: none;
+            position: relative;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+
+            #hoveredList:after {
+                content: "";
+                position: absolute;
+                background-color: #ff3c78;
+                height: 3px;
+                width: 0;
+                left: 0;
+                bottom: -5px;
+                transition: .3s;
+                color: white;
+            }
+
+            #hoveredList:hover:after {
+                width: 100%;
+            }
+
+        .playful {
+            text-shadow: -2px 2px 3px #ff3c78;
+        }
+    </style>
 </head>
-
 <body>
-
     <div class="d-flex" id="wrapper">
-
         <!-- Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Cari Paneli </div>
-            <div class="list-group list-group-flush">
-                <a href="/CurrentPanel/Index/" class="list-group-item list-group-item-action bg-light">Profilim</a>
-                <a href="/CurrentPanel/Orders/" class="list-group-item list-group-item-action bg-light">Siparişlerim</a>
-                <a href="/CurrentPanel/CargoTrack/" class="list-group-item list-group-item-action bg-light">Kargo Takibi</a>
-                <a href="/CurrentPanel/InComingMessage/" class="list-group-item list-group-item-action bg-light">Mesajlar</a>
-                <a href="/CurrentPanel/LogOut/" class="list-group-item list-group-item-action bg-light">Çıkış Yap</a>
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading playful" style="font-size: 40px; font-weight: bold; color: white; ">Cari Paneli <hr id="customHr" /></div>
+            <div class="list-group list-group-flush" style="margin-top:-20px;font-size:20px;">
+                <a href="/CurrentPanel/Index/" id="hoveredList" class="list-group-item list-group-item-action bg-dark nav-link">
+                    <i class="fas fa-user-astronaut" style="width:15%;"></i>
+                    Profilim
+                </a>
+                <a href="/CurrentPanel/Orders/" id="hoveredList" class="list-group-item list-group-item-action bg-dark nav-link">
+                    <i class="fas fa-shopping-cart" style="width:15%;"></i>
+                    Siparişlerim
+                </a>
+                <a href="/CurrentPanel/CargoTrack/" id="hoveredList" class="list-group-item list-group-item-action bg-dark nav-link">
+                    <i class="fas fa-truck" style="width:15%;"></i>
+                    Kargo Takibi
+                </a>
+                <a href="/CurrentPanel/InComingMessage/" id="hoveredList" class="list-group-item list-group-item-action bg-dark nav-link">
+                    <i class="fas fa-comment-alt" style="width:15%;"></i>
+                    Mesajlar
+                </a>
+                <a href="/CurrentPanel/LogOut/" id="hoveredList" class="list-group-item list-group-item-action bg-dark nav-link">
+                    <i class="fas fa-sign-out" style="width:15%;"></i>
+                    Çıkış Yap
+                </a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -76,19 +119,16 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
     <!-- Bootstrap core JavaScript -->
     <script src="~/webpanel/vendor/jquery/jquery.min.js"></script>
     <script src="~/webpanel/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Menu Toggle Script -->
-    <script>$("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });</script>
-
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });</script>
 </body>
-
 </html>
