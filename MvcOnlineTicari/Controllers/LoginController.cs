@@ -19,17 +19,17 @@ namespace MvcOnlineTicari.Controllers
             return View();
         }
         [HttpGet]
-        public PartialViewResult RegisterCurrent()
+        public ActionResult RegisterCurrent()
         {
-            return PartialView();
+            return View();
         }
         [HttpPost]
-        public PartialViewResult RegisterCurrent(Current current)
+        public ActionResult RegisterCurrent(Current current)
         {
             context.Currents.Add(current);
             current.CurrentStatus = true;
             context.SaveChanges();
-            return PartialView();
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult LoginCurrent()
@@ -49,7 +49,6 @@ namespace MvcOnlineTicari.Controllers
             else
             {
                 return RedirectToAction("Index", "Login");
-
             }
         }
         [HttpGet]
