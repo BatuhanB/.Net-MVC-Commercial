@@ -1,0 +1,170 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Kayıp Mı Oldunuz ?</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,300italic,300&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="~/errorpage-css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/errorpage-css/flexslider.css">
+    <link rel="stylesheet" href="~/errorpage-css/jquery.fancybox.css">
+    <link rel="stylesheet" href="~/errorpage-css/style.css">
+    <link rel="stylesheet" href="~/errorpage-css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/errorpage-css/color/color_1.css" id="theme-color">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+
+
+    <div id="page" class="page" style="background: #ea424e;">
+        <!-- Header -->
+        <header class="header">
+
+            <!-- Logotype -->
+            <p class="header-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </p>
+
+            <!-- Topmenu Toggle -->
+            <div class="mainmenu-btn" id="mainmenu-btn">
+                <div class="mainmenu-btn-line"></div>
+                <div class="mainmenu-btn-line"></div>
+                <div class="mainmenu-btn-line"></div>
+                <div class="mainmenu-btn-line"></div>
+            </div>
+
+            <!-- Search Form -->
+            <div class="header-search">
+                <a href="#" id="header-search-btn" class="header-search-btn"><i class="fa fa-search"></i></a>
+                <form action="#" id="header-search">
+                    <input type="text" placeholder="Search..">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+        </header>
+        <!-- Header -->
+        <!-- Error 404 -->
+        <div class="page-cont-wrap">
+            <div class="cont page-cont err404">
+                <p class="err404-img">
+                    <img src="~/errorpage-img/err404.png" alt="">
+                </p>
+                <p class="err404-ttl">Aradığınız Sayfa Bulunuamadı!</p>
+                <p class="err404-ttl" style="margin-top:40px;">Sol Menüden Gidiniz.</p>
+            </div>
+           
+        </div>
+        <span class="line-ct-wrap"><span class="line-ct"></span></span>
+
+    </div>
+
+
+    <!-- Navmenu -->
+    <div class="mainmenu-bg" id="mainmenu-bg"></div>
+    <nav class="mainmenu" id="mainmenu">
+        <ul>
+            <li>
+                <a href="/Category/Index/">Anasayfa</a>
+            </li>
+            <li>
+                <a href="/Product/Index/">Ürünler</a>
+            </li>
+            <li>
+                <a href="/Login/Index/">Giriş Sayfası</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Navmenu -->
+    <!-- Footer -->
+    <footer class="footer-wrap">
+        <div class="cont footer">
+
+            <!-- Logotype -->
+            <p class="footer-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </p>
+
+            <!-- Subscribe -->
+            <form class="form-validate footer-subscribe" action="#">
+                <input data-required="text" data-required-email="email" type="text" placeholder="Email address" name="email2">
+                <button type="submit">Subscribe <i class="fa fa-angle-right"></i></button>
+            </form>
+
+            <!-- Social Links -->
+            <ul class="footer-social">
+                <li>
+                    <a href="http://vk.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-vk"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://twitter.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://behance.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://linkedin.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://facebook.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://instagram.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://dribbble.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-dribbble"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Copyright -->
+            <p class="footer-copyright">2016 © Stockware All Rights Reserved</p>
+
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+    <script src="~/errorpage-js/jquery-1.12.3.min.js"></script>
+    <script src="~/errorpage-js/fancybox/fancybox.js"></script>
+    <script src="~/errorpage-js/fancybox/helpers/jquery.fancybox-thumbs.js"></script>
+    <script src="~/errorpage-js/jquery.flexslider-min.js"></script>
+    <script src="~/errorpage-js/masonry.pkgd.min.js"></script>
+    <script src="~/errorpage-js/jquery.fractionslider.js"></script>
+    <script src="~/errorpage-js/main.js"></script>
+
+</body>
+</html>
