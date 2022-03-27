@@ -13,7 +13,6 @@ namespace MvcOnlineTicari.Controllers
     {
         // GET: CurrentPanel
         Context context = new Context();
-        [Authorize]
         public ActionResult Index()
         {
             var mail = (string)Session["CurrentMail"];
@@ -33,7 +32,6 @@ namespace MvcOnlineTicari.Controllers
             ViewBag.currentCity = city;
             return View(values);
         }
-        [Authorize]
         public ActionResult Orders()
         {
             var mail = (string)Session["CurrentMail"];
@@ -41,7 +39,6 @@ namespace MvcOnlineTicari.Controllers
             var values = context.SaleBehaviors.Where(x => x.CurrentID == id).ToList();
             return View(values);
         }
-        [Authorize]
         public ActionResult InComingMessage()
         {
             var mail = (string)Session["CurrentMail"];
@@ -92,7 +89,6 @@ namespace MvcOnlineTicari.Controllers
             context.SaveChanges();
             return RedirectToAction("NewMessage");
         }
-        [Authorize]
         public ActionResult CargoTrack(string search)
         {
             var values = from x in context.CargoDetails select x;

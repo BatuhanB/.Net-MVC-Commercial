@@ -179,6 +179,7 @@
     <Compile Include="Models\Entity\Charges.cs" />
     <Compile Include="Models\Entity\Class1.cs" />
     <Compile Include="Models\Entity\Class2.cs" />
+    <Compile Include="Models\Entity\Class3.cs" />
     <Compile Include="Models\Entity\Detail.cs" />
     <Compile Include="Models\Entity\Group3.cs" />
     <Compile Include="Models\Entity\Groups.cs" />
@@ -3009,6 +3010,7 @@
     <Content Include="Views\CurrentPanel\CurrentSettings.cshtml" />
     <Content Include="Views\CurrentPanel\Announcements.cshtml" />
     <Content Include="Views\Error\PageError.cshtml" />
+    <Content Include="Views\Category\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

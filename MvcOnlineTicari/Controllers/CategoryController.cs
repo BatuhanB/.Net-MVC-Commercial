@@ -52,5 +52,25 @@ namespace MvcOnlineTicari.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Test()
+        {
+            Class3 cs = new Class3();
+            cs.Categories = new SelectList(context.Categories, "CategoryID", "CategoryName");
+            cs.Products = new SelectList(context.Products, "ProductID", "ProductName");
+            return View(cs);
+        }
+        public JsonResult GetProducts(int p)
+        {
+            var productList = (from x in context.Products
+                               join y in context.Categories
+                               on x.Category.CategoryID equals y.CategoryID
+                               where x.Category.CategoryID == p
+                               select new
+                               {
+                                   Text = x.ProductName,
+                                   Value = x.ProductID.ToString()
+                               }).ToList();
+            return Json(productList,JsonRequestBehavior.AllowGet);
+        }
     }
 }

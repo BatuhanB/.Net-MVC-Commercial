@@ -1,0 +1,40 @@
+﻿@model MvcOnlineTicari.Models.Entity.Class3
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+        $('#DropKategori').change(function () {
+            var id = $('#DropKategori').val();
+            $.ajax({
+                url: '/Category/GetProducts',
+                data: { p: id },
+                type: "POST",
+                dataType: "Json",
+                success: function (data) {
+                    console.log(data);
+                    $('#DropUrun').empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#DropUrun').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<div class="container-fluid">
+    <div>
+        <h2>Kategoriler - Ürünler</h2>
+    </div>
+    <br />
+    <div>
+        @Html.Label("Kategoriler")
+        @Html.DropDownList("DropKategori", Model.Categories, "---Kategori Seçiniz---", new { @class = "form-control" })
+        <br />
+        @Html.Label("Ürünler")
+        @Html.DropDownList("DropUrun", Model.Products, "---Ürün Seçiniz---", new { @class = "form-control" })
+    </div>
+</div>
