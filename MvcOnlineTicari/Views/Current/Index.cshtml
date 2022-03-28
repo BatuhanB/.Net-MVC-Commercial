@@ -1,5 +1,7 @@
 ﻿@using MvcOnlineTicari.Models.Entity
-@model List<Current>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Current>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -33,5 +35,11 @@
         }
 
     </table>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page })
+                , new PagedListRenderOptions
+                {
+                    LiElementClasses = new List<string>
+                    {"page-link"}
+                })
     <a class="btn btn-success" href="/Current/AddCurrent">Cari Ekle</a>
 </div>

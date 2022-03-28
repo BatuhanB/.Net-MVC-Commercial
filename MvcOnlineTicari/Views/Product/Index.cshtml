@@ -46,6 +46,11 @@
             </tr>
         }
     </table>
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page })
+                , new PagedListRenderOptions
+                {
+                    LiElementClasses = new List<string>
+                    {"page-link"}
+                })
     <a href="/Product/AddProduct/" class="btn btn-danger">Yeni Urun</a>
 </div>

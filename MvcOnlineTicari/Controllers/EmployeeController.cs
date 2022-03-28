@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicari.Models.Context;
 using MvcOnlineTicari.Models.Entity;
+using PagedList;
 
 namespace MvcOnlineTicari.Controllers
 {
@@ -13,9 +14,9 @@ namespace MvcOnlineTicari.Controllers
     {
         // GET: Employee
         Context context = new Context();
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var values = context.Employees.ToList();
+            var values = context.Employees.ToList().ToPagedList(page, 6);
             return View(values);
         }
         [HttpGet]
