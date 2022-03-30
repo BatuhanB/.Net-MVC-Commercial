@@ -71,5 +71,11 @@ namespace MvcOnlineTicari.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
+        public ActionResult AdminLogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
+        }
     }
 }
