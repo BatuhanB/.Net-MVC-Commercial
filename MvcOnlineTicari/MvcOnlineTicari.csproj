@@ -180,6 +180,7 @@
     <Compile Include="Models\Entity\Class1.cs" />
     <Compile Include="Models\Entity\Class2.cs" />
     <Compile Include="Models\Entity\Class3.cs" />
+    <Compile Include="Models\Entity\Class4.cs" />
     <Compile Include="Models\Entity\Detail.cs" />
     <Compile Include="Models\Entity\Group3.cs" />
     <Compile Include="Models\Entity\Groups.cs" />
@@ -3137,6 +3138,7 @@
     <Content Include="Views\Error\PageError.cshtml" />
     <Content Include="Views\Category\Test.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\Invoice\Dynamic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
