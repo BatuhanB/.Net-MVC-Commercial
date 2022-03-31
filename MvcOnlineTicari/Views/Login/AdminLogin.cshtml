@@ -94,6 +94,7 @@
                 <span class="login100-form-title p-b-53">
                     Admin Giriş Sayfası
                 </span>
+                <p style="color:red; font-size:18px; margin-bottom:10px;margin-top:-20px;text-align:center;">@ViewBag.message</p>
                 @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post, new { @class = "login100-form validate-form flex-sb flex-w" }))
                 {
                     <a href="/Login/Index/" class="btn-face m-b-20" id="btn-grad1">

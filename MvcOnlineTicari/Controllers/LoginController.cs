@@ -48,7 +48,8 @@ namespace MvcOnlineTicari.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Login");
+                ViewBag.message = "Girmiş olduğunuz mail adresi veya şifre yanlıştır!";
+                return View("Index");
             }
         }
         [HttpGet]
@@ -68,7 +69,8 @@ namespace MvcOnlineTicari.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Login");
+                ViewBag.message = "Girmiş olduğunuz kullanıcı adı veya şifre yanlıştır!";
+                return View();
             }
         }
         public ActionResult AdminLogOut()
