@@ -32,5 +32,11 @@ namespace MvcOnlineTicari.Controllers
             Response.TrySkipIisCustomErrors = true;
             return View("PageError");
         }
+        public ActionResult Error500()
+        {
+            Response.StatusCode = 500;
+            Response.TrySkipIisCustomErrors = true;
+            return View("PageError");
+        }
     }
 }
