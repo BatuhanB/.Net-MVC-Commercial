@@ -1,0 +1,93 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Overpass:wght@100;300;400;600&display=swap');
+#customHr {
+    background-color: #ff3c78;
+    height: 2.2px;
+    border-radius: 35px;
+}
+
+#hoveredList {
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+    #hoveredList:after {
+        content: "";
+        position: absolute;
+        background-color: #ff3c78;
+        height: 3px;
+        width: 0;
+        left: 0;
+        bottom: -5px;
+        transition: .3s;
+    }
+
+    #hoveredList:hover:after {
+        width: 100%;
+    }
+
+.playful {
+    text-shadow: -2px 2px 3px #ff3c78;
+}
+/*Admin Layout links-icons*/
+#link-color {
+    font-weight: 500;
+    font-size: 14px;
+    color: #e9e5e5;
+}
+
+#link-color-icon {
+    color: white;
+    font-size: 16px;
+    transition: .3s;
+}
+
+#link-color::after {
+    content: "";
+    background: #e9e5e5;
+    color: black;
+    mix-blend-mode: exclusion;
+    width: calc(100% + 10px);
+    height: 0;
+    position: absolute;
+    bottom: -2px;
+    left: -10px;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+#link-color:hover::after {
+    height: calc(100% + 2px);
+}
+
+#header-color {
+    color: #00ffff;
+    font-size: 16px;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #08e2e2;
+    }
+
+#page-headers {
+    font-family: Montserrat, sans-serif;
+    font-size: 78px;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px 0 12px 0;
+    text-shadow: 4px 4px 12px rgba(50, 50, 93, 0.6);
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+}

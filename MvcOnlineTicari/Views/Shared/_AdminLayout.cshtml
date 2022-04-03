@@ -14,47 +14,13 @@
         <meta name="author" content="" />
         <title>MVC5 Otomasyon</title>
         <link href="~/web/dist/css/styles.css" rel="stylesheet" />
+        <link href="~/web/dist/css/custom.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
-        <style>
-            #link-color {
-                font-weight: 500;
-                font-size: 14px;
-                color: #e9e5e5;
-            }
-
-            #link-color-icon {
-                color: white;
-                font-size: 16px;
-                transition: .3s;
-            }
-
-            #link-color::after {
-                content: "";
-                background: #e9e5e5;
-                color: black;
-                mix-blend-mode: exclusion;
-                width: calc(100% + 10px);
-                height: 0;
-                position: absolute;
-                bottom: -2px;
-                left: -10px;
-                transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-            }
-
-            #link-color:hover::after {
-                height: calc(100% + 2px)
-            }
-
-            #header-color {
-                color: #00ffff;
-                font-size: 16px;
-            }
-        </style>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" style="background:#222121 !important; height:75px;">
-            <a class="navbar-brand" href="/Category/Index/"><img src="~/Image/bb-logo-blue.png" class="navbar-brand" style="height: 100%; width: 100%; margin-right: 20px;"/></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#" >
+            <a class="navbar-brand" href="/Category/Index/"><img src="~/Image/bb-logo-blue.png" class="navbar-brand" style="height: 100%; width: 100%; margin-right: 20px;" /></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
                 <i class="fas fa-bars" style="color:white; height:24px;"></i>
             </button><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -84,7 +50,7 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading" id="header-color">İşlemler</div>
                             <a class="nav-link" id="link-color" href="/Category/Index/">
-                                <div class="sb-nav-link-icon" id="link-color-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon active" id="link-color-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kategoriler
                             </a>
                             <a class="nav-link" id="link-color" href="/Product/Index/">
@@ -172,7 +138,7 @@
                                 <div class="sb-nav-link-icon"><i class="far fa-chart-bar" id="link-color-icon"></i></div>
                                 Hızlı Tablolar
                             </a>
-                            <a href="/Login/AdminLogOut/" class="nav-link" id="link-color" >
+                            <a href="/Login/AdminLogOut/" class="nav-link" id="link-color">
                                 <i class="fas fa-sign-out" id="link-color-icon" style="margin-right:7px;"></i>
                                 Çıkış Yap
                             </a>

@@ -2202,7 +2202,7 @@
     <Content Include="errorpage-css\jquery.fancybox.css" />
     <Content Include="errorpage-css\media.css" />
     <Content Include="errorpage-css\style.css" />
-    <Content Include="Custom CSS\base.css" />
+    <Content Include="Web\dist\css\custom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -3145,6 +3145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Custom CSS\" />
     <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
