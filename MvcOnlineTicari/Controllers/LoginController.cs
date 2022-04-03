@@ -79,5 +79,11 @@ namespace MvcOnlineTicari.Controllers
             Session.Abandon();
             return RedirectToAction("Index", "Login");
         }
+        public PartialViewResult LoggedAs()
+        {
+            var adminUserName = (string)Session["AdminUserName"];
+            ViewBag.adminUserName = adminUserName;
+            return PartialView();
+        }
     }
 }

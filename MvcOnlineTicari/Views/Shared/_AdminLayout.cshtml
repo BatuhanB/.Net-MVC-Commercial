@@ -16,11 +16,46 @@
         <link href="~/web/dist/css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+        <style>
+            #link-color {
+                font-weight: 500;
+                font-size: 14px;
+                color: #e9e5e5;
+            }
+
+            #link-color-icon {
+                color: white;
+                font-size: 16px;
+                transition: .3s;
+            }
+
+            #link-color::after {
+                content: "";
+                background: #e9e5e5;
+                color: black;
+                mix-blend-mode: exclusion;
+                width: calc(100% + 10px);
+                height: 0;
+                position: absolute;
+                bottom: -2px;
+                left: -10px;
+                transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            }
+
+            #link-color:hover::after {
+                height: calc(100% + 2px)
+            }
+
+            #header-color {
+                color: #00ffff;
+                font-size: 16px;
+            }
+        </style>
     </head>
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Ticari Otomasyon</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
-                <i class="fas fa-bars"></i>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark" style="background:#222121 !important; height:75px;">
+            <a class="navbar-brand" href="/Category/Index/"><img src="~/Image/bb-logo-blue.png" class="navbar-brand" style="height: 100%; width: 100%; margin-right: 20px;"/></a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#" >
+                <i class="fas fa-bars" style="color:white; height:24px;"></i>
             </button><!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -44,109 +79,106 @@
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" @*style=" background-color: #f3d115 !important;"*@ id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">İşlemler</div>
-                            <a class="nav-link" href="/Category/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <div class="sb-sidenav-menu-heading" id="header-color">İşlemler</div>
+                            <a class="nav-link" id="link-color" href="/Category/Index/">
+                                <div class="sb-nav-link-icon" id="link-color-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Kategoriler
                             </a>
-                            <a class="nav-link" href="/Product/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-flask"></i></div>
+                            <a class="nav-link" id="link-color" href="/Product/Index/">
+                                <div class="sb-nav-link-icon"><i id="link-color-icon" class="fas fa-flask"></i></div>
                                 Urunler
                             </a>
-                            <a class="nav-link" href="/Department/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
+                            <a class="nav-link" id="link-color" href="/Department/Index/">
+                                <div class="sb-nav-link-icon"><i id="link-color-icon" class="fas fa-bars"></i></div>
                                 Departmanlar
                             </a>
-                            <a class="nav-link" href="/Current/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            <a class="nav-link" id="link-color" href="/Current/Index/">
+                                <div class="sb-nav-link-icon"><i id="link-color-icon" class="fas fa-user"></i></div>
                                 Cariler
                             </a>
-                            <a class="nav-link" href="/Employee/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-street-view"></i></div>
+                            <a class="nav-link" id="link-color" href="/Employee/Index/">
+                                <div class="sb-nav-link-icon"><i id="link-color-icon" class="fas fa-street-view"></i></div>
                                 Personeller
                             </a>
-                            <a class="nav-link" href="/ToDo/Index/">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-check"></i></div>
+                            <a class="nav-link" id="link-color" href="/ToDo/Index/">
+                                <div class="sb-nav-link-icon"><i id="link-color-icon" class="fa-solid fa-check"></i></div>
                                 Yapılacaklar
                             </a>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-pie"></i></div>
+                            <a class="nav-link collapsed" id="link-color" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i id="link-color-icon" class="fas fa-chart-pie"></i></div>
                                 Grafikler
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                <div class="sb-sidenav-collapse-arrow"><i id="link-color-icon" class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    <a class="nav-link collapsed" id="link-color" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                         Türler
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                        <div class="sb-sidenav-collapse-arrow"><i id="link-color-icon" class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="/Graph/Index5/">Pie Grafik</a>
-                                            <a class="nav-link" href="/Graph/Index6/">Line Grafik</a>
-                                            <a class="nav-link" href="/Graph/Index7/">Column Grafik</a>
+                                            <a class="nav-link" id="link-color" href="/Graph/Index5/">Pie Grafik</a>
+                                            <a class="nav-link" id="link-color" href="/Graph/Index6/">Line Grafik</a>
+                                            <a class="nav-link" id="link-color" href="/Graph/Index7/">Column Grafik</a>
                                         </nav>
                                     </div>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Rapor & Fatura</div>
-                            <a class="nav-link" href="/Sale/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-arrows-alt"></i></div>
+                            <div class="sb-sidenav-menu-heading" id="header-color">Rapor & Fatura</div>
+                            <a class="nav-link" href="/Sale/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrows-alt" id="link-color-icon"></i></div>
                                 Satışlar
                             </a>
-                            <a class="nav-link" href="/Invoice/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-calendar"></i></div>
+                            <a class="nav-link" href="/Invoice/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-calendar" id="link-color-icon"></i></div>
                                 Faturalar
                             </a>
-                            <a class="nav-link" href="/Invoice/Dynamic/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                            <a class="nav-link" href="/Invoice/Dynamic/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar" id="link-color-icon"></i></div>
                                 Dinamik Faturalar
                             </a>
-                            <a class="nav-link" href="/Employee/EmployeeCardList/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-person-booth"></i></div>
+                            <a class="nav-link" href="/Employee/EmployeeCardList/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-person-booth" id="link-color-icon"></i></div>
                                 Personel Listesi
                             </a>
-                            <a class="nav-link" href="/Cargo/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-box-open"></i></div>
+                            <a class="nav-link" href="/Cargo/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-box-open" id="link-color-icon"></i></div>
                                 Kargolar
                             </a>
-                            <a class="nav-link" href="/Product/ProductList/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
+                            <a class="nav-link" href="/Product/ProductList/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-print" id="link-color-icon"></i></div>
                                 PDF ~ Excel
                             </a>
-                            <a class="nav-link" href="/Alert/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-bell"></i></div>
+                            <a class="nav-link" href="/Alert/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-bell" id="link-color-icon"></i></div>
                                 Alertler
                             </a>
-                            <a class="nav-link" href="/Statistic/Index/">
-                                <div class="sb-nav-link-icon"><i class="far fa-chart-bar"></i></div>
+                            <a class="nav-link" href="/Statistic/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="far fa-chart-bar" id="link-color-icon"></i></div>
                                 İstatistikler
                             </a>
-                            <a class="nav-link" href="/Gallery/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-camera-retro"></i></div>
+                            <a class="nav-link" href="/Gallery/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-camera-retro" id="link-color-icon"></i></div>
                                 Galeri
                             </a>
-                            <a class="nav-link" href="/ProductDetail/Index/">
-                                <div class="sb-nav-link-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <a class="nav-link" href="/ProductDetail/Index/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="fas fa-pencil-ruler" id="link-color-icon"></i></div>
                                 Ürün Detay
                             </a>
-                            <a class="nav-link" href="/Statistic/SimpleTables/">
-                                <div class="sb-nav-link-icon"><i class="far fa-chart-bar"></i></div>
+                            <a class="nav-link" href="/Statistic/SimpleTables/" id="link-color">
+                                <div class="sb-nav-link-icon"><i class="far fa-chart-bar" id="link-color-icon"></i></div>
                                 Hızlı Tablolar
                             </a>
-                            <a href="/Login/AdminLogOut/" class="nav-link">
-                                <i class="fas fa-sign-out"></i>
+                            <a href="/Login/AdminLogOut/" class="nav-link" id="link-color" >
+                                <i class="fas fa-sign-out" id="link-color-icon" style="margin-right:7px;"></i>
                                 Çıkış Yap
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
+                    @Html.Action("LoggedAs", "Login")
                 </nav>
             </div>
             <div id="layoutSidenav_content">
@@ -174,5 +206,5 @@
 }
 else
 {
-    <h1>Bu Sayfaya Erişiminiz Bulunmamaktadır.</h1>
+<h1>Bu Sayfaya Erişiminiz Bulunmamaktadır.</h1>
 }

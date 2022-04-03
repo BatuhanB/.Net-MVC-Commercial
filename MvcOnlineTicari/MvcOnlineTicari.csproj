@@ -2207,6 +2207,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\bb-logo-blue.png" />
     <Content Include="Image\customer.png" />
     <Content Include="Image\employee1.jpg" />
     <Content Include="Image\employee2.jpg.jpg" />
@@ -3140,6 +3141,7 @@
     <Content Include="Views\Category\Test.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Invoice\Dynamic.cshtml" />
+    <Content Include="Views\Login\LoggedAs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
