@@ -182,6 +182,7 @@
     <Compile Include="Models\Entity\Class3.cs" />
     <Compile Include="Models\Entity\Class4.cs" />
     <Compile Include="Models\Entity\Detail.cs" />
+    <Compile Include="Models\Entity\Dto\CategoryDto.cs" />
     <Compile Include="Models\Entity\Group3.cs" />
     <Compile Include="Models\Entity\Groups.cs" />
     <Compile Include="Models\Entity\Groups2.cs" />
@@ -3145,7 +3146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Custom CSS\" />
     <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@ using MvcOnlineTicari.Models.Entity;
 using MvcOnlineTicari.Models.Context;
 using PagedList;
 using PagedList.Mvc;
+using MvcOnlineTicari.Models.Entity.Dto;
 
 namespace MvcOnlineTicari.Controllers
 {
@@ -16,7 +17,15 @@ namespace MvcOnlineTicari.Controllers
         Context context = new Context();
         public ActionResult Index(int page = 1)
         {
-            var values =context.Categories.Where(x=>x.CategoryStatus == true).ToList().ToPagedList(page,5);    
+            var result = from category in context.Categories
+                         select new CategoryDto
+                         {
+                             CategoryName = category.CategoryName,
+                             CategoryID = category.CategoryID,
+                             CategoryStatus = category.CategoryStatus,
+                             CategoryStatusText = category.CategoryStatus == true ? "Aktif" : "Pasif"
+                         };
+            var values = result.ToList().ToPagedList(page, 5);
             return View(values);
         }
         [HttpGet]
@@ -42,7 +51,7 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult GetCategory(int id)
         {
             var category = context.Categories.Find(id);
-            return View("GetCategory",category);  
+            return View("GetCategory", category);
         }
         public ActionResult UpdateCategory(Category category)
         {
@@ -70,7 +79,7 @@ namespace MvcOnlineTicari.Controllers
                                    Text = x.ProductName,
                                    Value = x.ProductID.ToString()
                                }).ToList();
-            return Json(productList,JsonRequestBehavior.AllowGet);
+            return Json(productList, JsonRequestBehavior.AllowGet);
         }
     }
 }
