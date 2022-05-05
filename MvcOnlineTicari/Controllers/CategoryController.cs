@@ -46,7 +46,7 @@ namespace MvcOnlineTicari.Controllers
             var category = context.Categories.Find(id);
             category.CategoryStatus = false;
             context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Category");
         }
         public ActionResult GetCategory(int id)
         {
@@ -58,6 +58,7 @@ namespace MvcOnlineTicari.Controllers
             if (!ModelState.IsValid) { return View("GetCategory"); }
             var categories = context.Categories.Find(category.CategoryID);
             categories.CategoryName = category.CategoryName;
+            categories.CategoryStatus = category.CategoryStatus;
             context.SaveChanges();
             return RedirectToAction("Index");
         }

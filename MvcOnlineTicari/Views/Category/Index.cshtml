@@ -109,6 +109,7 @@
     #custom-tr-2 {
         font-size: 20px;
     }
+
     #status {
         margin-top: 7px;
         margin-left: 14px;
@@ -132,20 +133,20 @@
                     </tr>
                     @foreach (var item in Model)
                     {
-                <tr id="custom-tr">
-                    <td>@item.CategoryName</td>
-                    @if (@item.CategoryStatus == true)
-                    {
-                        <td class="btn btn-success" id="status">@item.CategoryStatusText</td>
-                    }
-                    else
-                    {
-                        <td class="btn btn-danger" id="status">@item.CategoryStatusText</td>
-                    }
+                        <tr id="custom-tr">
+                            <td>@item.CategoryName</td>
+                            @if (@item.CategoryStatus == true)
+                            {
+                                <td class="btn btn-success" id="status">@item.CategoryStatusText</td>
+                            }
+                            else
+                            {
+                                <td class="btn btn-danger" id="status">@item.CategoryStatusText</td>
+                            }
 
-                    <td><a href="/Category/DeleteCategory/@item.CategoryID" class="button-6" style="text-decoration: none;">Sil</a></td>
-                    <td><a href="/Category/GetCategory/@item.CategoryID" class="button-7" style="text-decoration: none;" id="btn-5">Güncelle</a></td>
-                </tr>
+                            <td><a href="/Category/DeleteCategory/@item.CategoryID" class="button-6" style="text-decoration: none;" onclick="alert1()">Sil</a></td>
+                            <td><a href="/Category/GetCategory/@item.CategoryID" class="button-7" style="text-decoration: none;" id="btn-5">Güncelle</a></td>
+                        </tr>
                     }
                 </table>
                 @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page })
@@ -159,23 +160,24 @@
         </div>
     </div>
 </div>
-@*<script>
-        $('#btn5').click(function () {
-                swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this imaginary file!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                })
-                    .then((willDelete) => {
-                        if (willDelete) {
-                            swal("Poof! Your imaginary file has been deleted!", {
-                                icon: "success",
-                            });
-                        } else {
-                            swal("Your imaginary file is safe!");
-                        }
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function alert1() {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
                     });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
             });
-    </script>*@
+    };
+</script>

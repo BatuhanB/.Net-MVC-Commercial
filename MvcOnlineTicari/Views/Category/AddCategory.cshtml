@@ -5,19 +5,23 @@
 }
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <div class="container-fluid">
-    <h2>Yeni Kategori Sayfası</h2>
-    <br />
-    <form class="form-group" method="post">
-        @Html.LabelFor(x => x.CategoryName)
-        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+    <div class="content" style="margin:12px;">
         <br />
-        <button class="btn btn-info" id="btn3">Kaydet</button>
-        <script>
-            $('#btn3').click(function () {
-                swal("Kategori Ekleme", "Kategori başarılı bir şekilde eklendi!", "success")
-            });
-        </script>
-    </form>
+        <h2>Yeni Kategori Sayfası</h2>
+        <br />
+        <form class="form-group" method="post">
+            @Html.LabelFor(x => x.CategoryName)
+            @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+            <br />
+            <button class="btn btn-info" id="btn3">Kaydet</button>
+            <script>
+                $('#btn3').click(function () {
+                    swal("Kategori Ekleme", "Kategori başarılı bir şekilde eklendi!", "success")
+                });
+            </script>
+        </form>
+    </div>
 </div>

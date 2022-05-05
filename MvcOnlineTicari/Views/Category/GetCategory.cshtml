@@ -9,12 +9,17 @@
     <br />
     @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
     {
-        <div class="form-group">
-            @Html.LabelFor(x => x.CategoryName)
-            @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
-            @Html.HiddenFor(x => x.CategoryID)
-        </div>
+<div class="form-group">
+    @Html.LabelFor(x => x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.CategoryStatus)
+    @Html.TextBoxFor(x => x.CategoryStatus, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryStatus, "", new { @style = "color:red" })
+
+    @Html.HiddenFor(x => x.CategoryID)
+</div>
         <button class="btn btn-warning">Güncelle</button>
     }
 </div>
