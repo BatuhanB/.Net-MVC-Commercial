@@ -6,51 +6,71 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<style>
+    #custom-tr {
+        font-weight: 500;
+        font-size: 18px;
+    }
 
+    #custom-tr-2 {
+        font-size: 20px;
+    }
+</style>
 <div class="container-fluid">
     <br />
-    @using (Html.BeginForm("Index", "Product", FormMethod.Get))
-    {
-        <p>
-            Ürün Adı: @Html.TextBox("search")
-            <input type="submit" value="Ara" />
-        </p>
-    }
+    <h1 class="display-4 font-weight-bold" id="page-headers">Ürünler Sayfası</h1>
     <br />
-    <table class="table table-condensed">
-        <tr>
-            <th>Ürün</th>
-            <th>Marka</th>
-            <th>Stok</th>
-            <th>Alis Fiyat</th>
-            <th>Satis Fiyat</th>
-            <th>Kategori</th>
-            <th>Gorsel</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-            <th>Satış Yap</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.ProductName</td>
-                <td>@item.ProductBrand</td>
-                <td>@item.ProductStock</td>
-                <td>@item.ProductPurchasePrice ₺</td>
-                <td>@item.ProductSalePrice ₺</td>
-                <td>@item.Category.CategoryName</td>
-                <td><img src=@item.ProductImage style="vertical-align: bottom; width:58px; height:58px; "></td>
-                <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Product/GetProduct/@item.ProductID" class="btn btn-outline-warning">Güncelle</a></td>
-                <td><a href="/Product/Sale/@item.ProductID" class="btn btn-outline-info">Satış Yap</a></td>
-            </tr>
-        }
-    </table>
-    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page })
-                , new PagedListRenderOptions
+    <div class="border border-light" id="data-tables" style="margin-bottom: 20px;">
+        <div class="content" style="margin:10px;">
+            @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+            {
+
+                <div style="width:480px;display:flex;">
+                    <p style="width:100px;padding-top:4px;font-weight:600;font-size:20px;">Ürün Adı:</p>
+                    <p style="display: flex; width: 300px;">
+                        @Html.TextBox("search", null, new { @class = "form-control" })
+                        <input type="submit" value="Ara" class="btn btn-success" style="margin-left:20px;" />
+                    </p>
+                </div>
+            }
+
+            <br />
+            <table class="table table-borderless">
+                <tr id="custom-tr-2">
+                    <th>Ürün</th>
+                    <th>Marka</th>
+                    <th>Stok</th>
+                    <th>Alis Fiyat</th>
+                    <th>Satis Fiyat</th>
+                    <th>Kategori</th>
+                    <th>Gorsel</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                    <th>Satış Yap</th>
+                </tr>
+                @foreach (var item in Model)
                 {
-                    LiElementClasses = new List<string>
-                    {"page-link"}
-                })
-    <a href="/Product/AddProduct/" class="btn btn-danger">Yeni Urun</a>
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.ProductBrand</td>
+                        <td>@item.ProductStock</td>
+                        <td>@item.ProductPurchasePrice ₺</td>
+                        <td>@item.ProductSalePrice ₺</td>
+                        <td>@item.Category.CategoryName</td>
+                        <td><img src=@item.ProductImage style="vertical-align: bottom; width:64px; height:64px; "></td>
+                        <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+                        <td><a href="/Product/GetProduct/@item.ProductID" class="btn btn-outline-warning">Güncelle</a></td>
+                        <td><a href="/Product/Sale/@item.ProductID" class="btn btn-outline-info">Satış Yap</a></td>
+                    </tr>
+                }
+            </table>
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page })
+                        , new PagedListRenderOptions
+                        {
+                            LiElementClasses = new List<string>
+                            {"page-link"}
+                        })
+        </div>
+        <a href="/Product/AddProduct/" class="btn btn-danger" style="margin:10px;">Yeni Urun</a>
+    </div>
 </div>

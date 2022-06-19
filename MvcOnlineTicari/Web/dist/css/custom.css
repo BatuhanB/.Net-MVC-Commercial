@@ -104,6 +104,16 @@
     transition: .3s;
 }
 
+#data-tables-2 {
+    padding: 8px;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+    transition: .3s;
+    margin: 0 auto 20px;
+    width: 50%;
+}
+
+
 .custom-button {
     padding: 15px 25px;
     border: unset;
