@@ -145,7 +145,8 @@
                             }
 
                             <td><a href="/Category/DeleteCategory/@item.CategoryID" class="button-6" style="text-decoration: none;" onclick="alert1()">Sil</a></td>
-                            <td><a href="/Category/GetCategory/@item.CategoryID" class="button-7" style="text-decoration: none;" id="btn-5">Güncelle</a></td>
+                            <td><a  href="/Category/GetCategory/@item.CategoryID"class="button-7" style="text-decoration: none;" id="btn-5">Güncelle</a></td>
+                           
                         </tr>
                     }
                 </table>
@@ -155,8 +156,25 @@
                     LiElementClasses = new List<string>
                     {"page-link"}
                 })
-                <a href="/Category/AddCategory/" class="btn btn-primary" style="margin:0 0 16px;">Yeni Kategori</a>
+                <a @*href="/Category/AddCategory/"*@ class="btn btn-primary" style="margin:0 0 16px; color:white;" data-toggle="modal" data-target="#Category">Yeni Kategori</a>
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="Category">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" style="margin:0 auto;font-weight:700;">Yeni Kategori</h2>
+            </div>
+            <form class="form-group" method="post" action="/Category/AddCategory/">
+                <div class="modal-body">
+                    <label>Kategori Adi</label>
+                    <input type="text" name="CategoryName" class="form-control" />
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

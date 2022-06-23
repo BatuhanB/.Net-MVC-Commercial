@@ -3,23 +3,35 @@
     ViewBag.Title = "GetDepartment";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<style>
+    #data-tables-2 {
+        padding: 8px;
+        border-radius: 25px;
+        box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+        transition: .3s;
+        margin: 75px auto;
+        width: 50%;
+    }
+</style>
 <div class="container-fluid">
     <br />
-    <h2>Departman Güncelleme</h2>
+    <h1 class="display-4 font-weight-bold" id="page-headers">Ürün Güncelleme</h1>
     <br />
-    @using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Post))
-    {
-<div class="form-group">
-    @Html.LabelFor(x => x.DepartmentName)
-    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.DepartmentName, "", new { @style = "color:red" })
-    <br />
-    @Html.LabelFor(x => x.DepartmentStatus)
-    @Html.TextBoxFor(x => x.DepartmentStatus, new { @class = "form-control" })
+    <div class="border border-light" id="data-tables-2">
+        @using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Post))
+        {
+            <div class="form-group" style="padding:20px;">
+                @Html.LabelFor(x => x.DepartmentName)
+                @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DepartmentName, "", new { @style = "color:red,width:80px;height:15px;" })
+                <br />
+                @Html.LabelFor(x => x.DepartmentStatus)
+                @Html.TextBoxFor(x => x.DepartmentStatus, new { @class = "form-control" })
 
-    @Html.HiddenFor(x => x.DepartmentID)
-</div>
-        <button class="btn btn-warning">Güncelle</button>
-    }
+                @Html.HiddenFor(x => x.DepartmentID)
+            </div>
+            <button class="btn btn-warning" style="margin:-10px 10px 10px 18px; ">Güncelle</button>
+        }
+    </div>
 </div>
 

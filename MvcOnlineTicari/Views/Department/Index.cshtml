@@ -4,23 +4,205 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<div class="container-fluid">
-    <table class="table table-bordered" style="margin:20px auto;">
-        <tr>
-            <th>Departman Adı</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-            <th>Detaylar</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.DepartmentName</td>
-                <td><a href="/Department/DeleteDepartment/@item.DepartmentID" class="btn btn-outline-danger">Sil</a></td>
-                <td><a href="/Department/GetDepartment/@item.DepartmentID" class="btn btn-outline-success">Güncelle</a></td>
-                <td><a href="/Department/DepartmentDetail/@item.DepartmentID" class="btn btn-outline-dark">Detaylar</a></td>
-            </tr>
+<style>
+    .button-6 {
+        align-items: center;
+        background-color: red;
+        border-radius: .25rem;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        height: 2.4rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 350ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+    }
+
+        .button-6:hover,
+        .button-6:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px;
+            color: red;
+            background-color: white;
         }
-    </table>
-    <a href="/Department/AddDepartment/" class="btn btn-primary">Yeni Departman</a>
+
+        .button-6:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-6:active {
+            background-color: #F0F0F1;
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
+        }
+
+    .button-7 {
+        align-items: center;
+        background-color: #37b712;
+        border-radius: .25rem;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        height: 2.4rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 350ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+    }
+
+        .button-7:hover,
+        .button-7:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px;
+            color: #37b712;
+            background-color: white;
+        }
+
+        .button-7:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-7:active {
+            background-color: #F0F0F1;
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
+        }
+
+    .button-8 {
+        align-items: center;
+        background-color: rgb(72, 71, 69);
+        border-radius: .25rem;
+        box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+        box-sizing: border-box;
+        color: white;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        justify-content: center;
+        line-height: 1.25;
+        margin: 0;
+        height: 2.4rem;
+        padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+        position: relative;
+        text-decoration: none;
+        transition: all 350ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        width: auto;
+    }
+
+        .button-8:hover,
+        .button-8:focus {
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.3) 0 4px 12px;
+            color: rgb(72, 71, 69);
+            background: white;
+        }
+
+        .button-8:hover {
+            transform: translateY(-1px);
+        }
+
+        .button-8:active {
+            background-color: rgb(72, 71, 69);
+            border-color: rgba(0, 0, 0, 0.15);
+            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+            color: rgba(0, 0, 0, 0.65);
+            transform: translateY(0);
+        }
+
+    #custom-tr {
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    #custom-tr-2 {
+        font-size: 20px;
+    }
+
+    #status {
+        margin-top: 7px;
+        margin-left: 14px;
+        cursor: default;
+    }
+</style>
+<div class="container-fluid">
+    <br />
+    <h1 class="display-4 font-weight-bold" id="page-headers">Departman Bilgileri</h1>
+    <br />
+    <div class="border border-light" id="data-tables" style="margin-bottom: 20px;">
+        <table class="table table-borderless" style="margin:20px auto;">
+            <tr id="custom-tr-2">
+                <th>Departman Adı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>Detaylar</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr id="custom-tr">
+                    <td>@item.DepartmentName</td>
+                    <td><a href="/Department/DeleteDepartment/@item.DepartmentID" class="btn btn-outline-danger button-6">Sil</a></td>
+                    <td><a href="/Department/GetDepartment/@item.DepartmentID" class="btn btn-outline-success button-7">Güncelle</a></td>
+                    <td><a href="/Department/DepartmentDetail/@item.DepartmentID" class="btn btn-outline-dark button-8">Detaylar</a></td>
+                </tr>
+            }
+        </table>
+        <a @*href="/Department/AddDepartment/"*@ class="btn btn-warning" style="margin:0 0 10px 10px;" data-toggle="modal" data-target="#Department">Yeni Departman</a>
+    </div>
+</div>
+<div class="modal" id="Department">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" style="margin:0 auto;font-weight:700;">Yeni Departman</h2>
+            </div>
+            <form class="form-group" method="post" action="/Department/AddDepartment/">
+                <div class="modal-body">
+                    <label>Departman Adi</label>
+                    <input type="text" name="DepartmentName" class="form-control"/>
+                    <br />
+                    <label>Departman Durumu</label>
+                    <input type="text" name="DepartmentStatus" class="form-control"/>
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
