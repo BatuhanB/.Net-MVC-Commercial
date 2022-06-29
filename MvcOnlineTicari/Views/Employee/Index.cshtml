@@ -7,30 +7,60 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+<style>
+    .card {
+        width: 18rem;
+        display: inline-block;
+        margin: 10px 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+</style>
 <div class="container-fluid">
     <br />
-    <h2>Burasi Personel Sayfasidir</h2>
-    <table id="employees" class="table table-hover">
-        <tr>
-            <th>Isim</th>
-            <th>Soyisim</th>
-            <th>Resim</th>
-            <th>Departman</th>
-            <th>Guncelle</th>
-            <th>Satışlar</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+    <h1 class="display-4 font-weight-bold" id="page-headers">Personel Listesi</h1>
+    <br />
+    @*<table id="employees" class="table table-hover">
             <tr>
-                <td>@item.EmployeeName</td>
-                <td>@item.EmployeeSurName</td>
-                <td><img src="@item.EmployeeImage" style="vertical-align: bottom; width: 102px; height: 68px;" /></td>
-                <td>@item.Department.DepartmentName</td>
-                <td><a class="btn btn-warning" style="color:black;font-weight:500" href="/Employee/GetEmployee/@item.EmployeeID">Guncelle</a></td>
-                <td><a class="btn btn-success" style="color: black; font-weight: 500" href="/Department/DepartmentEmployeeSale/@item.EmployeeID">Detaylar</a></td>
+                <th>Isim</th>
+                <th>Soyisim</th>
+                <th>Resim</th>
+                <th>Departman</th>
+                <th>Guncelle</th>
+                <th>Satışlar</th>
             </tr>
-        }
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.EmployeeSurName</td>
+                    <td><img src="@item.EmployeeImage" style="vertical-align: bottom; width: 102px; height: 68px;" /></td>
+                    <td>@item.Department.DepartmentName</td>
+                    <td><a class="btn btn-warning" style="color:black;font-weight:500" href="/Employee/GetEmployee/@item.EmployeeID">Guncelle</a></td>
+                    <td><a class="btn btn-success" style="color: black; font-weight: 500" href="/Department/DepartmentEmployeeSale/@item.EmployeeID">Detaylar</a></td>
+                </tr>
+            }
+        </table>*@
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            @foreach (var item in Model)
+            {
+                <div class="card" style="">
+                    <img src="@item.EmployeeImage" class="card-img-top" alt="..." style="width:277px;height:215px; margin:5px; border:2px solid grey;">
+                    <div class="card-body">
+                        <h3 style="text-align:center;">@item.EmployeeName @item.EmployeeSurName</h3>
+                        <p class="card-text" style="text-align:center;font-size:26px;">@item.Department.DepartmentName</p>
+                        <a class="btn btn-warning" style="color: black; font-weight: 500; margin-left: 30px;" href="/Employee/GetEmployee/@item.EmployeeID">Guncelle</a>
+                        <a class="btn btn-success" style="color: black; font-weight: 500; margin-left:10px; " href="/Department/DepartmentEmployeeSale/@item.EmployeeID">Detaylar</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
     @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page })
                , new PagedListRenderOptions
                {
