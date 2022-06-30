@@ -15,8 +15,8 @@
                 @*@Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.prdcts, new { @class = "form-control" })*@
                 <br />
                 @Html.LabelFor(x => x.Current)
-                @Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })
-                @*@Html.DropDownListFor(x => x.CurrentID, (List<SelectListItem>)ViewBag.crrnts, new { @class = "form-control" })*@
+                @*@Html.TextBoxFor(x => x.CurrentID, new { @class = "form-control" })*@
+                @Html.DropDownListFor(x => x.CurrentID, (List<SelectListItem>)ViewBag.crrnts, new { @class = "form-control" })
                 <br />
                 @Html.LabelFor(x => x.Employee)
                 @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.emplys, new { @class = "form-control" })

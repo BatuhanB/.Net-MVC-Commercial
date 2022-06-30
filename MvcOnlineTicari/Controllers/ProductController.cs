@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -39,6 +40,14 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult AddProduct(Product product)
         {
             if (!ModelState.IsValid) { return View("AddProduct"); }
+            if (Request.Files.Count > 0)
+            {
+                string filename = Path.GetFileName(Request.Files[0].FileName);
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string url = "~/Image/" + filename + extension;
+                Request.Files[0].SaveAs(Server.MapPath(url));
+                product.ProductImage = "/Image/" + filename + extension;
+            }
             List<SelectListItem> value = (from x in context.Categories.ToList()
                                           select new SelectListItem
                                           {
@@ -73,7 +82,16 @@ namespace MvcOnlineTicari.Controllers
         public ActionResult UpdateProduct(Product product)
         {
             if (!ModelState.IsValid) { return View("GetProduct"); }
+            
+            if (Request.Files.Count > 0)
+            {
+                string filename = Path.GetFileName(Request.Files[0].FileName);
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string url = "~/Image/" + filename + extension;
+                Request.Files[0].SaveAs(Server.MapPath(url));
+                product.ProductImage = "/Image/" + filename + extension;
 
+            }
             List<SelectListItem> value = (from x in context.Categories.ToList()
                                           select new SelectListItem
                                           {
@@ -84,7 +102,7 @@ namespace MvcOnlineTicari.Controllers
             var products = context.Products.Find(product.ProductID);
             products.ProductName = product.ProductName;
             products.ProductBrand = product.ProductBrand;
-            products.ProductImage = product.ProductName;
+            products.ProductImage = product.ProductImage;
             products.ProductPurchasePrice = product.ProductPurchasePrice;
             products.ProductSalePrice = product.ProductSalePrice;
             products.ProductStock = product.ProductStock;
@@ -107,7 +125,14 @@ namespace MvcOnlineTicari.Controllers
                                                Text = x.EmployeeName + " " + x.EmployeeSurName,
                                                Value = x.EmployeeID.ToString()
                                            }).ToList();
+            List<SelectListItem> value4 = (from x in context.Currents.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CurrentName + " " + x.CurrentSurName,
+                                               Value = x.CurrentID.ToString()
+                                           }).ToList();
             ViewBag.emplys = value3;
+            ViewBag.crrnts = value4;
             var prod1 = context.Products.Find(id);
             ViewBag.prodid = prod1.ProductID;
             ViewBag.prodprice = prod1.ProductSalePrice;
@@ -123,7 +148,14 @@ namespace MvcOnlineTicari.Controllers
                                                Text = x.EmployeeName + " " + x.EmployeeSurName,
                                                Value = x.EmployeeID.ToString()
                                            }).ToList();
+            List<SelectListItem> value4 = (from x in context.Currents.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CurrentName + " " + x.CurrentSurName,
+                                               Value = x.CurrentID.ToString()
+                                           }).ToList();
             ViewBag.emplys = value3;
+            ViewBag.crrnts = value4;
             saleBehavior.SaleDate = DateTime.Today;
             context.SaleBehaviors.Add(saleBehavior);
             context.SaveChanges();
