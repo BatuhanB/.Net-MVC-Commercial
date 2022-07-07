@@ -3,34 +3,45 @@
     ViewBag.Title = "GetCurrent";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<style>
+    #data-tables-2 {
+        padding: 8px;
+        border-radius: 25px;
+        box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+        transition: .3s;
+        margin: 35px auto;
+        width: 50%;
+    }
+</style>
 <div class="container-fluid">
     <br />
-    <h2>Cari Güncelleme</h2>
+    <h1 class="display-4 font-weight-bold" id="page-headers">Cari Güncelleme</h1>
     <br />
-    @using (Html.BeginForm("UpdateCurrent", "Current", FormMethod.Post))
-    {
-        <div class="form-group">
-            @Html.LabelFor(x => x.CurrentName)
-            @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color:red" })
-            <br />
-            @Html.LabelFor(x => x.CurrentSurName)
-            @Html.TextBoxFor(x => x.CurrentSurName, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.CurrentSurName, "", new { @style = "color:red" })
-            <br />
-            @Html.LabelFor(x => x.CurrentCity)
-            @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.CurrentCity, "", new { @style = "color:red" })
-            <br />
-            @Html.LabelFor(x => x.CurrentMail)
-            @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
-            <br />
-            @Html.LabelFor(x => x.CurrentStatus)
-            @Html.TextBoxFor(x => x.CurrentStatus, new { @class = "form-control" })
-            <br />
-            @Html.HiddenFor(x => x.CurrentID)
-        </div>
-        <button class="btn btn-warning">Güncelle</button>
-    }
+    <div class="border border-light" id="data-tables-2">
+        @using (Html.BeginForm("UpdateCurrent", "Current", FormMethod.Post))
+        {
+            <div class="form-group" style="padding:10px 20px 0 20px;">
+                @Html.LabelFor(x => x.CurrentName, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CurrentName, "", new { @style = "color:red;margin-bottom:-40px;" })
+                <br />
+                @Html.LabelFor(x => x.CurrentSurName, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CurrentSurName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CurrentSurName, "", new { @style = "color:red;margin-bottom:-40px;" })
+                <br />
+                @Html.LabelFor(x => x.CurrentCity, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CurrentCity, "", new { @style = "color:red;margin-bottom:-40px;" })
+                <br />
+                @Html.LabelFor(x => x.CurrentMail, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(x => x.CurrentStatus, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CurrentStatus, new { @class = "form-control" })
+                <br />
+                @Html.HiddenFor(x => x.CurrentID)
+            </div>
+            <button class="btn btn-warning" style="margin:-10px 10px 10px 18px;" >Güncelle</button>
+        }
+    </div>
 </div>

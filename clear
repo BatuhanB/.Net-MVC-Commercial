@@ -1,0 +1,347 @@
+[33mcommit 67dbc7c124d4cd529add8e41c51d0ccb23050410[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Jun 30 15:00:56 2022 +0300
+
+    some actions has been tested and style revised
+
+[33mcommit ca7cf53ba77821579d9f9455794050251ef87456[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Jun 29 15:19:24 2022 +0300
+
+    style changes
+
+[33mcommit 3099a0fc3ceea4397db17124cc8e24ceea11dc8b[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Jun 23 14:57:47 2022 +0300
+
+    pagination has been changed
+
+[33mcommit 70c09b487f744d8927768752db9ccfbcdf1f8cda[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Jun 23 14:14:27 2022 +0300
+
+    Popup Data Modal Has been added and still working on design fixing
+
+[33mcommit c56dfb02e06e34f6176e027ffa0e8501ba2554ab[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Jun 19 12:56:26 2022 +0300
+
+    style changes
+
+[33mcommit e3d1c1bf32bfd1635856ee2ba3f7bc9e72a73acb[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu May 5 20:08:09 2022 +0300
+
+    Last Changes
+
+[33mcommit a31ea6b839db265750ff8137d22f8e222dec6e81[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Fri Apr 29 23:41:09 2022 +0300
+
+    category status has been changed to active-passive
+
+[33mcommit 8a33ec82528bb2815e40bb7eed9ef8db7e148a29[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Apr 3 22:11:00 2022 +0300
+
+    design improvements
+
+[33mcommit f464bd7055d698e3789bb5c6bd235630d0b21a76[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Apr 3 16:16:33 2022 +0300
+
+    design improvements
+
+[33mcommit ec7f3f905c0e55c4fff025d8dce51e11163b227e[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Fri Apr 1 11:28:34 2022 +0300
+
+    missing error handling page has been added
+
+[33mcommit 19161b565c848ad989b78618e19fb57957e65343[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Mar 31 10:39:18 2022 +0300
+
+    login error page has been changed
+
+[33mcommit 9e733c6d435f8a14376bc2a3737298c55389c84f[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Mar 30 20:26:03 2022 +0300
+
+    authorization has been added
+
+[33mcommit dba7f48e3adc6fe7a8d16e670eb85622e38c35de[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Mar 30 20:02:02 2022 +0300
+
+    dynamic invoices has been added
+
+[33mcommit 5b4694a739de5c82ca0ede1bc0b3d13d7d6b093c[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Mon Mar 28 21:46:06 2022 +0300
+
+    missing pagination has been added to some pages
+
+[33mcommit e38c21bb36334a6eb8a99b11f93d0f88c170e6d1[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Mar 27 23:55:15 2022 +0300
+
+    login page completely has been changed (better UI design)
+
+[33mcommit 2ca999fbf047084c0d3a7e3f2709eaf0a1fbd3f6[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Mar 27 11:10:32 2022 +0300
+
+    global authorization and cascading has been added
+
+[33mcommit 1a59ca8149ae87f4e6ea717c636dd6584d365b3d[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Mar 27 10:18:11 2022 +0300
+
+    error pages has been added
+
+[33mcommit b996a80b6610ef41b586aa9366823ea5510ba5df[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sat Mar 26 11:54:01 2022 +0300
+
+    current password change func and announcement has been added + theme ahs been changed
+
+[33mcommit 72eedad163ac98737a8d2b734236b6b60b210987[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Fri Mar 25 11:56:10 2022 +0300
+
+    revise on current profil page
+
+[33mcommit 8cc2a9c2aa37dd4b65ee23cb992214a2b4c05e70[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Mar 20 22:40:06 2022 +0300
+
+    cargo track page has been added for the authenticated current
+
+[33mcommit ae75bb70948a44890200cf02c4e5e5caecb273f3[m
+Author: BatuhanB <56514839+BatuhanB@users.noreply.github.com>
+Date:   Sun Mar 20 14:54:42 2022 +0300
+
+    Update README.md
+
+[33mcommit 848672220b76ae6d3137c7a9341fe0a05c9eb303[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Mar 20 14:52:25 2022 +0300
+
+    current new messages and message details has been added(in session)
+
+[33mcommit 81218e01e78028b21bcb2037ae0de995dabb92f7[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sat Mar 19 20:39:20 2022 +0300
+
+    message page current session,inbox and sent message section has been added
+
+[33mcommit 0aaaa08264d0ba083ce70f09584b904d47141fb8[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Fri Mar 18 10:09:20 2022 +0300
+
+    messages layout has been added and data pulled from database
+
+[33mcommit da2f1b5be648fbb008acc929f53d6fc066f04573[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Mar 17 09:48:57 2022 +0300
+
+    google charts and different chart types has been added
+
+[33mcommit 80750a4b71b9e8fccfc0ff14ffb2e382b5b9e6b6[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Mar 16 21:58:55 2022 +0300
+
+    MVC Charts has been added and will continue to adding Google Charts
+
+[33mcommit 423112c57b9600c8d214f2e5e39cb62fbfc84719[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Mar 16 16:48:56 2022 +0300
+
+    QR Code has been added for cargo's
+
+[33mcommit e55dcbc0bec73bb671ef2b8e7b1dd5d512aeb320[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Tue Mar 15 21:24:37 2022 +0300
+
+    cargo and cargo track code page(cargo detail) has been added
+
+[33mcommit 0c1eceaa2d9b4913e648114568c8473fe4512a62[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Mon Mar 14 23:17:19 2022 +0300
+
+    product sale has been updated
+
+[33mcommit 5fc3c906c790456995a82fc78c0e4d4ba37aca81[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Mar 10 10:17:52 2022 +0300
+
+    sweet alert has been added
+
+[33mcommit f10144915b452b9a5a108c882bfa3c8a215e86f2[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Mar 9 22:56:46 2022 +0300
+
+    sweet alert has been added
+
+[33mcommit fba0f0ae0ca22b2646f04d5996a73846ff27a1b7[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Mar 9 21:07:37 2022 +0300
+
+    file upload system has been added in to employee add-update pages
+
+[33mcommit 8a16cdac8571c423443b034e0a6085cbde1fea28[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Mon Mar 7 21:42:27 2022 +0300
+
+    invoice popup has been added,statistics nullable error fixed
+
+[33mcommit 98d436ddee4b9c90795e742579a3415ae0760c03[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Mar 6 17:23:49 2022 +0300
+
+    paginaging,admin login and invoice trigger has been added
+
+[33mcommit 10a4ad88396763df6e54953c0b249c0c87b341f2[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sat Mar 5 14:02:23 2022 +0300
+
+    current orders page has been added,some design updates
+
+[33mcommit bf2b67ba421193d43c7ca51c393d5ad9ee8b8f1c[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Fri Mar 4 22:26:13 2022 +0300
+
+    Current login authorization has been added to login page
+
+[33mcommit bd4d10e1d465b5fa55d158788511520016f83fea[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Mar 3 22:43:24 2022 +0300
+
+    login page + current register page have been added
+
+[33mcommit e5adefe6f128e24a21367d219390733156cbc76e[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Tue Mar 1 21:45:01 2022 +0300
+
+    editing toDo page and receiving data
+
+[33mcommit fb68273960d4713c7e3fee304362417b451199f0[m
+Author: BatuhanB <56514839+BatuhanB@users.noreply.github.com>
+Date:   Sat Feb 26 20:05:07 2022 +0300
+
+    Update README.md
+
+[33mcommit 9ba4393afa098bd52b2fc441f1613aea959c64d2[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sat Feb 26 00:09:29 2022 +0300
+
+    solved some errors
+
+[33mcommit ed706a7b78a10b9a195a4dd5afa4967554a7cc9f[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Feb 23 17:08:36 2022 +0300
+
+    employee card - and some tables updates
+
+[33mcommit c750d886f16826163782a345add368b9356edc71[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Tue Feb 22 16:37:09 2022 +0300
+
+    statistic charts and tables
+
+[33mcommit 74f95e55ca910afc77b8b1d1453e67c65ea90cff[m
+Author: BatuhanB <56514839+BatuhanB@users.noreply.github.com>
+Date:   Mon Feb 21 22:33:24 2022 +0300
+
+    Update README.md
+
+[33mcommit 8effaaac174104c329481b2dcf6ee770c5870f91[m
+Author: BatuhanB <56514839+BatuhanB@users.noreply.github.com>
+Date:   Mon Feb 21 22:33:05 2022 +0300
+
+    Update README.md
+
+[33mcommit e50258e4e528ea1810582a51a6e6891b6a16f206[m
+Author: BatuhanB <56514839+BatuhanB@users.noreply.github.com>
+Date:   Mon Feb 21 22:32:50 2022 +0300
+
+    Update README.md
+
+[33mcommit 9d69cf8d34b6da2108d28eb025e81cfdd1c8fb62[m
+Author: BatuhanB <56514839+BatuhanB@users.noreply.github.com>
+Date:   Mon Feb 21 22:30:47 2022 +0300
+
+    Create README.md
+
+[33mcommit bfc79c5fcd8087e158d98971580ba1db0c3b6885[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Mon Feb 21 22:27:19 2022 +0300
+
+    adding gallery and product details page + admin lte
+
+[33mcommit a397ff2e0bbe0616cc20dee63030137eced6da43[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Mon Feb 21 15:43:20 2022 +0300
+
+    last touches on invoices and adding statistics page and design
+
+[33mcommit 4ac704be33be09fcf406024d9fc394643751abfb[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Feb 20 15:27:28 2022 +0300
+
+    adding invoice controller and page
+
+[33mcommit 1e314358fc639db4439086afd1a68054b0d01a5f[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Feb 20 00:39:07 2022 +0300
+
+    adding invoice page and datatables usage on sale page
+
+[33mcommit 0f9198eecb7e01713b28c25c71c6b020fce7e261[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Fri Feb 18 20:45:06 2022 +0300
+
+    adding sale update and sale detail pages
+
+[33mcommit e8f5f8f96e1293fe9f2880e664dd2f0412429303[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Wed Feb 16 21:31:38 2022 +0300
+
+    adding sale controller , sale behavior event
+
+[33mcommit 328d68987c6940a6fec2cf0838cc7cf66fd322ea[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Tue Feb 15 20:29:31 2022 +0300
+
+    adding employee page
+
+[33mcommit 538a416c91daa359239ff054c6ef066e22299c23[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sun Feb 13 15:02:59 2022 +0300
+
+    adding Current page and validations for all entities
+
+[33mcommit 3bb90d2c6d49370246f5fe06021867e1e7e70805[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sat Feb 12 19:28:01 2022 +0300
+
+    Product's and Employee's add,update,delete functions added
+
+[33mcommit b6dc95fb46c30dc868e00f331df44d1757ca1916[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Thu Feb 10 14:48:54 2022 +0300
+
+    adding products page on admin panel
+
+[33mcommit c6746622d9a554d809ac37f59a42a1df3fb13860[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Mon Feb 7 17:46:52 2022 +0300
+
+    adding admin page and new controller
+
+[33mcommit 2f727da20474c21fab52f455a2a89b35fa1549a4[m
+Author: BatuhanB <balibatuhan19@gmail.com>
+Date:   Sat Feb 5 14:52:21 2022 +0300
+
+    uploading project
