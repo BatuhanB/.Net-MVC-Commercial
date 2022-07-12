@@ -2,24 +2,34 @@
 @{
     ViewBag.Title = "GetCategory";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+}<style>
+    #data-tables-2 {
+        padding: 15px;
+        border-radius: 25px;
+        box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+        transition: .3s;
+        margin: 35px auto;
+        width: 50%;
+    }
+</style>
 <div class="container-fluid">
     <br />
-    <h2>Kategori Guncelleme</h2>
+    <h1 class="display-4 font-weight-bold" id="page-headers">Kategori Güncelleme</h1>
     <br />
-    @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
-    {
-<div class="form-group">
-    @Html.LabelFor(x => x.CategoryName)
-    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
-    <br />
-    @Html.LabelFor(x => x.CategoryStatus)
-    @Html.TextBoxFor(x => x.CategoryStatus, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.CategoryStatus, "", new { @style = "color:red" })
-
-    @Html.HiddenFor(x => x.CategoryID)
-</div>
-        <button class="btn btn-warning">Güncelle</button>
-    }
+    <div class="border border-light" id="data-tables-2">
+        @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.CategoryName, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red;margin-bottom:-40px;" })
+                <br />
+                @Html.LabelFor(x => x.CategoryStatus, new { @style = "font-weight:500;font-size:18px;" })
+                @Html.TextBoxFor(x => x.CategoryStatus, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.CategoryStatus, "", new { @style = "color:red;margin-bottom:-40px;" })
+                @Html.HiddenFor(x => x.CategoryID)
+            </div>
+            <button class="btn btn-warning" style="margin:-10px 10px 10px 2px; font-weight:500;">Güncelle</button>
+        }
+    </div>
 </div>

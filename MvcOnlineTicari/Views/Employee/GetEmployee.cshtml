@@ -3,30 +3,42 @@
     ViewBag.Title = "GetEmployee";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<style>
+    #data-tables-2 {
+        padding: 15px;
+        border-radius: 25px;
+        box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0.2) 0px 30px 60px -30px;
+        transition: .3s;
+        margin: 35px auto;
+        width: 50%;
+    }
+</style>
 <div class="container-fluid">
     <br />
-    <h2>Departman Güncelleme</h2>
-    @using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div class="form-group">
-            @Html.LabelFor(x => x.EmployeeName)
-            @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
-            <br />
-            @Html.LabelFor(x => x.EmployeeSurName)
-            @Html.TextBoxFor(x => x.EmployeeSurName, new { @class = "form-control" })
-            <br />
-            @Html.LabelFor(x => x.EmployeeImage)
-            <br />
-            @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
-            <input type="file" name="EmployeeImage" />
-            <br />
-            <br />
-            @Html.LabelFor(x => x.Department.DepartmentID)
-            @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
+    <h1 class="display-4 font-weight-bold" id="page-headers">Personel Güncelleme</h1>
+    <br />
+    <div class="border border-light" id="data-tables-2">
+        @using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.EmployeeName)
+                @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(x => x.EmployeeSurName)
+                @Html.TextBoxFor(x => x.EmployeeSurName, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(x => x.EmployeeImage)
+                <br />
+                @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
+                <input type="file" name="EmployeeImage" />
+                <br />
+                <br />
+                @Html.LabelFor(x => x.Department.DepartmentID)
+                @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.value1, new { @class = "form-control" })
 
-            @Html.HiddenFor(x => x.EmployeeID)
-        </div>
-        <button class="btn btn-warning">Güncelle</button>
-    }
-</div>
+                @Html.HiddenFor(x => x.EmployeeID)
+            </div>
+            <button class="btn btn-warning">Güncelle</button>
+        }
+    </div>
+    </div>

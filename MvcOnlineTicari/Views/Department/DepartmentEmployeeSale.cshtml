@@ -4,34 +4,47 @@
     ViewBag.Title = "DepartmentEmployeeSale";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<style>
+    #custom-tr {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    #custom-tr-2 {
+        font-weight: 400;
+        font-size: 17px;
+    }
+</style>
 <div class="container-fluid">
     <br />
-    <h2>Departman Personel Satış</h2>
+    <h1 class="display-4 font-weight-bold" id="page-headers">Personel Satış Detay Sayfası</h1>
     <br />
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active" style="font-weight:500">Personel adı: @ViewBag.employeeName</li>
+    <ol class="breadcrumb mb-4" style="">
+        <li class="breadcrumb-item active" style="font-weight: 600; color: black;font-size:18px;">Personel adı: @ViewBag.employeeName</li>
     </ol>
-    <table class="table table-condensed">
-        <tr>
-            <th>Ürün</th>
-            <th>Cari</th>
-            <th>Fiyat</th>
-            <th>Adet</th>
-            <th>Toplam</th>
-            <th>Tarih</th>
-            <th>Yazdırma</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Product.ProductName</td>
-                <td>@item.Current.CurrentName @item.Current.CurrentSurName</td>
-                <td>@item.SalePrice ₺</td>
-                <td>@item.SaleQuantity</td>
-                <td>@item.SaleSumAmount ₺</td>
-                <td>@DateTime.Parse(@item.SaleDate.ToString()).ToString("dd-MM-yyyy")</td>
-                <td><a href="#" class="btn btn-danger">Yazdır</a></td>
+    <div class="border border-light" id="data-tables" style="margin-bottom: 20px;">
+        <table class="table table-borderless">
+            <tr id="custom-tr">
+                <th>Ürün</th>
+                <th>Cari</th>
+                <th>Fiyat</th>
+                <th>Adet</th>
+                <th>Toplam</th>
+                <th>Tarih</th>
+                <th>Yazdırma</th>
             </tr>
-        }
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr id="custom-tr-2">
+                    <td>@item.Product.ProductName</td>
+                    <td>@item.Current.CurrentName @item.Current.CurrentSurName</td>
+                    <td>@item.SalePrice ₺</td>
+                    <td>@item.SaleQuantity</td>
+                    <td>@item.SaleSumAmount ₺</td>
+                    <td>@DateTime.Parse(@item.SaleDate.ToString()).ToString("dd-MM-yyyy")</td>
+                    <td><a href="#" class="btn btn-danger">Yazdır</a></td>
+                </tr>
+            }
+        </table>
+    </div>
 </div>

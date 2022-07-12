@@ -48,7 +48,7 @@
             padding: 2px;
         }
 
-    button.primary {
+    a.primary {
         background-color: #03BFCB;
         border: 1px solid #03BFCB;
         border-radius: 3px;
@@ -58,11 +58,11 @@
         padding: 10px 25px;
         transition:.3s;
     }
-    button.primary:hover {
+    a.primary:hover {
         box-shadow: 0 10px 20px 0 rgba(3, 190, 203,0.6);
     }
 
-        button.primary.ghost {
+        a.primary.ghost {
             background-color: transparent;
             color: #02899C;
             transition: .3s;
@@ -104,12 +104,12 @@
                     <h6>@item.Department.DepartmentName</h6>
                     <p>User interface designer and <br /> front-end developer</p>
                     <div class="buttons">
-                        <button class="primary" href="/Employee/GetEmployee/@item.EmployeeID"  style="margin-top:15px;">
+                        <a class="btn primary" href="/Employee/GetEmployee/@item.EmployeeID"  style="margin-top:15px;">
                             Güncelle
-                        </button>
-                        <button class="primary ghost" href="/Department/DepartmentEmployeeSale/@item.EmployeeID"  style="margin-top: 15px;">
+                        </a>
+                        <a class="btn primary ghost" href="/Department/DepartmentEmployeeSale/@item.EmployeeID"  style="margin-top: 15px;">
                             Detaylar
-                        </button>
+                        </a>
                     </div>
                 </div>
             }
@@ -133,5 +133,5 @@
                                LiElementClasses = new List<string>
                                {"page-link","pagination", "justify-content-center"," m-0"}
                            })
-    <a href="/Employee/AddEmployee/" class="btn btn-secondary" style="color:white">Personel Ekle</a>
+    <a href="/Employee/AddEmployee/" class="btn btn-warning" style="color:black; font-weight:500;">Personel Ekle</a>
 </div>
